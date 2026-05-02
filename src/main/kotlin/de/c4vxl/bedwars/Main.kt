@@ -1,9 +1,6 @@
 package de.c4vxl.bedwars
 
-import de.c4vxl.bedwars.handler.ItemTranslationHandler
-import de.c4vxl.bedwars.handler.MapHandler
-import de.c4vxl.bedwars.handler.RespawnHandler
-import de.c4vxl.bedwars.handler.SpawnerHandler
+import de.c4vxl.bedwars.handler.*
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
@@ -59,6 +56,7 @@ class Main : JavaPlugin() {
         MapHandler()
         ItemTranslationHandler()
         SpawnerHandler()
+        ScoreboardHandler()
 
         logger.info("[+] $name has been enabled!")
     }

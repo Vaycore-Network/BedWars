@@ -3,6 +3,7 @@ package de.c4vxl.bedwars.handler
 import de.c4vxl.bedwars.Main
 import de.c4vxl.gamemanager.gma.event.player.GamePlayerRespawnEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
+import de.c4vxl.gamemanager.gma.team.Team
 import net.kyori.adventure.title.TitlePart
 import org.bukkit.Bukkit
 import org.bukkit.Sound
@@ -21,13 +22,21 @@ class RespawnHandler : Listener {
         Bukkit.getPluginManager().registerEvents(this, Main.instance)
     }
 
+    companion object {
+        /**
+         * Returns {@code true} if the team can still respawn
+         */
+        val Team.canRespawn: Boolean get() =
+            this.manager.game.gameData.get<Boolean>("destroyed.${this.id}") != true
+    }
+
     @EventHandler
     fun onRespawn(event: GamePlayerRespawnEvent) {
         // Get team of player
         val team = event.player.team ?: return
 
         // Return if bed of the team hasn't been destroyed yet
-        if (event.game.gameData.get<Boolean>("destroyed.${team.id}") != true)
+        if (team.canRespawn)
             return
 
         // Eliminate player
@@ -82,7 +91,7 @@ class RespawnHandler : Listener {
             )
 
             // Play sound
-            audience.bukkitPlayer.playSound(audience.bukkitPlayer.location, Sound.ENTITY_LIGHTNING_BOLT_IMPACT, 3f, 1f)
+            audience.bukkitPlayer.playSound(audience.bukkitPlayer.location, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1f, 1f)
         }
 
         // Broadcast to players
@@ -91,5 +100,8 @@ class RespawnHandler : Listener {
             audience.bukkitPlayer.sendTitlePart(TitlePart.TITLE, language.getCmp("game.bed.destroy.broadcast.team.title"))
             audience.bukkitPlayer.sendTitlePart(TitlePart.SUBTITLE, language.getCmp("game.bed.destroy.broadcast.team.subtitle"))
         }
+
+        // Update in scoreboard
+        ScoreboardHandler.update(game)
     }
 }

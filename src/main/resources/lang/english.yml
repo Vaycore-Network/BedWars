@@ -29,3 +29,11 @@
 "team.7.label": "<black>Black</black>"
 "team.8.label": "<white>White</white>"
 "team.9.label": "<gray>Gray</gray>"
+
+
+"game.scoreboard.title": "      ${prefix}      "
+"game.scoreboard.team.bed": "$0: <green><b>✔</b></green>"
+"game.scoreboard.team.remaining": "$0: <white>$1</white>"
+"game.scoreboard.team.dead": "$0: <red><b>⛌</b></red>"
+"game.scoreboard.team.self": " <gray>(You)</gray>"
+"game.scoreboard.map": "<red>Map:</red> <white>$0</white>"
