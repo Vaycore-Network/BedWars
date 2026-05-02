@@ -1,12 +1,15 @@
 package de.c4vxl.bedwars
 
+import de.c4vxl.bedwars.handler.ItemTranslationHandler
 import de.c4vxl.bedwars.handler.MapHandler
 import de.c4vxl.bedwars.handler.RespawnHandler
+import de.c4vxl.bedwars.handler.SpawnerHandler
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
+import io.papermc.paper.configuration.WorldConfiguration.Spawn
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Logger
 
@@ -54,6 +57,7 @@ class Main : JavaPlugin() {
         // Register handlers
         RespawnHandler()
         MapHandler()
+        ItemTranslationHandler()
 
         logger.info("[+] $name has been enabled!")
     }
