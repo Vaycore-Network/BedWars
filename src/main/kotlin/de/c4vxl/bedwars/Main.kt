@@ -58,6 +58,7 @@ class Main : JavaPlugin() {
         RespawnHandler()
         MapHandler()
         ItemTranslationHandler()
+        SpawnerHandler()
 
         logger.info("[+] $name has been enabled!")
     }
