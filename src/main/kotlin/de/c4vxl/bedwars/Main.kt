@@ -1,6 +1,7 @@
 package de.c4vxl.bedwars
 
 import de.c4vxl.bedwars.handler.RespawnHandler
+import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
@@ -33,11 +34,20 @@ class Main : JavaPlugin() {
         // Register language extensions
         ResourceUtils.readResource("langs", Main::class.java).split("\n")
             .forEach { langName ->
+                // Register translations
                 Language.provideLanguageExtension(
                     "bedwars",
                     langName,
                     ResourceUtils.readResource("lang/$langName.yml", Main::class.java)
                 )
+
+                // Register team labels
+                Language.get(langName)?.child("bedwars")?.let {
+                    Team.registerLabelTranslation(langName, buildMap {
+                        for (i in 0..9)
+                            put(i, it.get("team.$i.label"))
+                    })
+                }
             }
 
         // Register handlers
