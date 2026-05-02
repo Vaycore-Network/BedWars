@@ -54,6 +54,7 @@ class Main : JavaPlugin() {
         saveResource("teams.yml", false)
 
         // Register handlers
+        GameHandler()
         RespawnHandler()
         MapHandler()
         ItemTranslationHandler()
