@@ -6,7 +6,6 @@ import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
-import io.papermc.paper.configuration.WorldConfiguration.Spawn
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Logger
 

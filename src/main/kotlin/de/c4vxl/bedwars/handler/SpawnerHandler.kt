@@ -49,7 +49,7 @@ class SpawnerHandler : Listener {
                 // Update holograms
                 val dwait = spawner.interval - waited
                 holograms[spawner]?.forEach { (player, entity) ->
-                    player.setHologramText(entity, player.language.child("bedwars").getCmp("game.spawner.display.name",
+                    player.setHologramText(entity, player.language.child("bedwars").getCmp("spawner.display.name",
                         "${dwait.takeIf { it != 0 } ?: spawner.interval}"))
                 }
 

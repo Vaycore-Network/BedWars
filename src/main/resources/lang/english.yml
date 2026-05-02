@@ -1,28 +1,5 @@
 "prefix": "<gray>[<aqua>BedWars</aqua>]</gray>"
 
-"game.player.death": "${prefix} <gray><white>$0</white> has died!</gray>"
-"game.player.killed": "${prefix} <gray><white>$0</white> has been killed by <white>$1</white>!</gray>"
-"game.player.eliminated": "${prefix} <gray><white>$0</white> has <red>eliminated</red> themselves!</gray>"
-"game.player.eliminated_by": "${prefix} <gray><white>$0</white> has been <red>eliminated</red> by <white>$1</white>!</gray>"
-
-"game.bed.destroy.fail.invalid_team": "${prefix} <red>Sorry!</red> But this team doesn't seem to exist!"
-"game.bed.destroy.fail.own_team": "${prefix} <red>Sorry!</red> But you cannot destroy your own bed!"
-"game.bed.destroy.broadcast.global": "${prefix} The bed of team $0 has been <red>DESTROYED</red> by <gray>$1</gray>!"
-"game.bed.destroy.broadcast.team.title": "Your bed has been <red>DESTROYED</red>!"
-"game.bed.destroy.broadcast.team.subtitle": "You can no longer respawn"
-
-"game.map.break.warning": "${prefix} <red>Hey!</red> You cannot break blocks of the map!"
-
-"item.material.iron_ingot.name": "<gray><b>Iron</b></gray>"
-"item.material.brick.name": "<gray>Brick</gray>"
-
-
-"spawner.type.brick.name": "<gold><b>Brick Spawner</b></gold>"
-"spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"
-"spawner.type.emerald.name": "<gold><b>Emerald Spawner</b></gold>"
-
-"game.spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
-
 "team.0.label": "<red>Red</red>"
 "team.1.label": "<blue>Blue</blue>"
 "team.2.label": "<aqua>Aqua</aqua>"
@@ -34,10 +11,27 @@
 "team.8.label": "<white>White</white>"
 "team.9.label": "<gray>Gray</gray>"
 
-
 "game.scoreboard.title": "      ${prefix}      "
 "game.scoreboard.team.bed": "$0: <green><b>✔</b></green>"
 "game.scoreboard.team.remaining": "$0: <white>$1</white>"
 "game.scoreboard.team.dead": "$0: <red><b>⛌</b></red>"
 "game.scoreboard.team.self": " <gray>(You)</gray>"
 "game.scoreboard.map": "<red>Map:</red> <white>$0</white>"
+
+"game.player.death": "${prefix} <gray><white>$0</white> has died!</gray>"
+"game.player.killed": "${prefix} <gray><white>$0</white> has been killed by <white>$1</white>!</gray>"
+"game.player.eliminated": "${prefix} <gray><white>$0</white> has <red>eliminated</red> themselves!</gray>"
+"game.player.eliminated_by": "${prefix} <gray><white>$0</white> has been <red>eliminated</red> by <white>$1</white>!</gray>"
+"game.bed.destroy.fail.invalid_team": "${prefix} <red>Sorry!</red> But this team doesn't seem to exist!"
+"game.bed.destroy.fail.own_team": "${prefix} <red>Sorry!</red> But you cannot destroy your own bed!"
+"game.bed.destroy.broadcast.global": "${prefix} The bed of team $0 has been <red>DESTROYED</red> by <gray>$1</gray>!"
+"game.bed.destroy.broadcast.team.title": "Your bed has been <red>DESTROYED</red>!"
+"game.bed.destroy.broadcast.team.subtitle": "You can no longer respawn"
+"game.map.break.warning": "${prefix} <red>Hey!</red> You cannot break blocks of the map!"
+
+"item.material.iron_ingot.name": "<gray><b>Iron</b></gray>"
+"item.material.brick.name": "<gray>Brick</gray>"
+"spawner.type.brick.name": "<gold><b>Brick Spawner</b></gold>"
+"spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"
+"spawner.type.emerald.name": "<gold><b>Emerald Spawner</b></gold>"
+"spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
