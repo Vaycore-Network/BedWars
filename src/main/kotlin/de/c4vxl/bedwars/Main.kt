@@ -1,5 +1,6 @@
 package de.c4vxl.bedwars
 
+import de.c4vxl.bedwars.handler.RespawnHandler
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
@@ -38,6 +39,9 @@ class Main : JavaPlugin() {
                     ResourceUtils.readResource("lang/$langName.yml", Main::class.java)
                 )
             }
+
+        // Register handlers
+        RespawnHandler()
 
         logger.info("[+] $name has been enabled!")
     }

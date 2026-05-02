@@ -1,0 +1,8 @@
+"prefix": "<gray>[<aqua>BedWars</aqua>]</gray>"
+
+
+"game.bed.destroy.fail.invalid_team": "${prefix} <red>Sorry!</red> But this team doesn't seem to exist!"
+"game.bed.destroy.fail.own_team": "${prefix} <red>Sorry!</red> But you cannot destroy your own bed!"
+"game.bed.destroy.broadcast.global": "${prefix} The bed of team $0 has been <red>DESTROYED</red> by <gray>$1</gray>!"
+"game.bed.destroy.broadcast.team.title": "Your bed has been <red>DESTROYED</red>!"
+"game.bed.destroy.broadcast.team.subtitle": "You can no longer respawn"
