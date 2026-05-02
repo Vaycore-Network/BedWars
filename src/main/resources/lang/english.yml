@@ -35,3 +35,5 @@
 "spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"
 "spawner.type.emerald.name": "<gold><b>Emerald Spawner</b></gold>"
 "spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
+
+"item.armor.leather.name": "<gray>Leather armor</gray>"

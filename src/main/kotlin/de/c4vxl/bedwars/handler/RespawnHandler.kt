@@ -1,6 +1,8 @@
 package de.c4vxl.bedwars.handler
 
 import de.c4vxl.bedwars.Main
+import de.c4vxl.bedwars.data.TeamData.equipTeamArmor
+import de.c4vxl.gamemanager.gma.event.player.GamePlayerEquipEvent
 import de.c4vxl.gamemanager.gma.event.player.GamePlayerRespawnEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.gma.team.Team
@@ -28,6 +30,11 @@ class RespawnHandler : Listener {
          */
         val Team.canRespawn: Boolean get() =
             this.manager.game.gameData.get<Boolean>("destroyed.${this.id}") != true
+    }
+
+    @EventHandler
+    fun onEquip(event: GamePlayerEquipEvent) {
+        event.player.equipTeamArmor()
     }
 
     @EventHandler
