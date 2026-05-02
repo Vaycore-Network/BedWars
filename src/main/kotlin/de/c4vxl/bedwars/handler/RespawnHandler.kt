@@ -36,11 +36,26 @@ class RespawnHandler : Listener {
         val team = event.player.team ?: return
 
         // Return if bed of the team hasn't been destroyed yet
-        if (team.canRespawn)
+        if (team.canRespawn) {
+            event.game.broadcastMessage(
+                "game.player.${if (event.killer == null) "death" else "killed"}",
+                event.player.bukkitPlayer.name,
+                event.killer?.bukkitPlayer?.name ?: "???",
+                child = "bedwars"
+            )
             return
+        }
 
         // Eliminate player
         event.player.eliminate(event.killer)
+
+        // Broadcast elimination message
+        event.game.broadcastMessage(
+            "game.player.${if (event.killer == null) "eliminated" else "eliminated_by"}",
+            event.player.bukkitPlayer.name,
+            event.killer?.bukkitPlayer?.name ?: "???",
+            child = "bedwars"
+        )
     }
 
     @EventHandler
@@ -101,7 +116,7 @@ class RespawnHandler : Listener {
             audience.bukkitPlayer.sendTitlePart(TitlePart.SUBTITLE, language.getCmp("game.bed.destroy.broadcast.team.subtitle"))
         }
 
-        // Update in scoreboard
+        // Update scoreboard
         ScoreboardHandler.update(game)
     }
 }

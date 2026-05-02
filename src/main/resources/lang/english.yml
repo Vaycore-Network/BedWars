@@ -1,5 +1,9 @@
 "prefix": "<gray>[<aqua>BedWars</aqua>]</gray>"
 
+"game.player.death": "${prefix} <gray><white>$0</white> has died!</gray>"
+"game.player.killed": "${prefix} <gray><white>$0</white> has been killed by <white>$1</white>!</gray>"
+"game.player.eliminated": "${prefix} <gray><white>$0</white> has <red>eliminated</red> themselves!</gray>"
+"game.player.eliminated_by": "${prefix} <gray><white>$0</white> has been <red>eliminated</red> by <white>$1</white>!</gray>"
 
 "game.bed.destroy.fail.invalid_team": "${prefix} <red>Sorry!</red> But this team doesn't seem to exist!"
 "game.bed.destroy.fail.own_team": "${prefix} <red>Sorry!</red> But you cannot destroy your own bed!"
