@@ -1,5 +1,6 @@
 package de.c4vxl.bedwars
 
+import de.c4vxl.bedwars.handler.MapHandler
 import de.c4vxl.bedwars.handler.RespawnHandler
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.language.Language
@@ -52,6 +53,7 @@ class Main : JavaPlugin() {
 
         // Register handlers
         RespawnHandler()
+        MapHandler()
 
         logger.info("[+] $name has been enabled!")
     }

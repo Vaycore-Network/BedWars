@@ -7,6 +7,8 @@
 "game.bed.destroy.broadcast.team.title": "Your bed has been <red>DESTROYED</red>!"
 "game.bed.destroy.broadcast.team.subtitle": "You can no longer respawn"
 
+"game.map.break.warning": "${prefix} <red>Hey!</red> You cannot break blocks of the map!"
+
 "team.0.label": "<red>Red</red>"
 "team.1.label": "<blue>Blue</blue>"
 "team.2.label": "<aqua>Aqua</aqua>"
