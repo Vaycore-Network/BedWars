@@ -9,8 +9,15 @@
 
 "game.map.break.warning": "${prefix} <red>Hey!</red> You cannot break blocks of the map!"
 
-"item.material.iron.name": "<gray><b>Iron</b></gray>"
+"item.material.iron_ingot.name": "<gray><b>Iron</b></gray>"
 "item.material.brick.name": "<gray>Brick</gray>"
+
+
+"spawner.type.brick.name": "<gold><b>Brick Spawner</b></gold>"
+"spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"
+"spawner.type.emerald.name": "<gold><b>Emerald Spawner</b></gold>"
+
+"game.spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
 
 "team.0.label": "<red>Red</red>"
 "team.1.label": "<blue>Blue</blue>"
