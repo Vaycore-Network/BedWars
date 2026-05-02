@@ -50,6 +50,9 @@ class Main : JavaPlugin() {
                 }
             }
 
+        // Save team config
+        saveResource("teams.yml", false)
+
         // Register handlers
         RespawnHandler()
         MapHandler()

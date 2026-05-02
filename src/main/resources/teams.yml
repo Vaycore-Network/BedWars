@@ -1,0 +1,80 @@
+colors:
+  # RED
+  0:
+    ==: Color
+    ALPHA: 255
+    RED: 255
+    BLUE: 0
+    GREEN: 0
+
+  # BLUE
+  1:
+    ==: Color
+    ALPHA: 255
+    RED: 0
+    BLUE: 255
+    GREEN: 0
+
+  # AQUA
+  2:
+    ==: Color
+    ALPHA: 255
+    RED: 0
+    BLUE: 255
+    GREEN: 255
+
+  # PURPLE
+  3:
+    ==: Color
+    ALPHA: 255
+    RED: 128
+    BLUE: 128
+    GREEN: 0
+
+  # YELLOW
+  4:
+    ==: Color
+    ALPHA: 255
+    RED: 255
+    BLUE: 0
+    GREEN: 255
+
+  # GREEN
+  5:
+    ==: Color
+    ALPHA: 255
+    RED: 0
+    BLUE: 0
+    GREEN: 128
+
+  # Orange
+  6:
+    ==: Color
+    ALPHA: 255
+    RED: 255
+    BLUE: 0
+    GREEN: 185
+
+  # BLACK
+  7:
+    ==: Color
+    ALPHA: 255
+    RED: 0
+    BLUE: 0
+    GREEN: 0
+
+  # WHITE
+  8:
+    ==: Color
+    ALPHA: 255
+    RED: 255
+    BLUE: 255
+    GREEN: 255
+
+  # GRAY
+  9:
+    ==: Color
+    ALPHA: 255
+    RED: 128
+    BLUE: 128
+    GREEN: 128
