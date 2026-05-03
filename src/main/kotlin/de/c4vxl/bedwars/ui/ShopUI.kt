@@ -34,7 +34,7 @@ class ShopUI(
     private var marginItem = ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, Component.empty())
         .onEvent(InventoryClickEvent::class.java) { it.isCancelled = true }.build()
 
-    val baseInventory get() = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
+    private val baseInventory get() = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
         .apply {
             // Add margin items
             for (i in 0..44)
@@ -62,12 +62,17 @@ class ShopUI(
                 try {
                     setItem(it.key, it.value.builder(player.gma)
                         .apply {
-                            lore = listOf(
-                                language.getCmp("ui.shop.buyable.lore.1", it.value.cost.toString(), it.value.currency.translationKey()),
-                                Component.empty(),
-                                language.getCmp("ui.shop.buyable.lore.2"),
-                                language.getCmp("ui.shop.buyable.lore.3")
-                            )
+                            lore = buildList {
+                                if (lore.isNotEmpty()) {
+                                    addAll(lore)
+                                    add(Component.empty())
+                                }
+
+                                add(language.getCmp("ui.shop.buyable.lore.1", it.value.cost.toString(), it.value.currency.translationKey()))
+                                add(Component.empty())
+                                add(language.getCmp("ui.shop.buyable.lore.2"))
+                                add(language.getCmp("ui.shop.buyable.lore.3"))
+                            }
                         }
                         .onEvent(InventoryClickEvent::class.java) { event ->
                             event.isCancelled = true
@@ -95,9 +100,8 @@ class ShopUI(
                             // Create item
                             val item = it.value.builder(player.gma).apply {
                                 amount = buyAmount * it.value.amount
-                                name = null
+                                lore = emptyList()
                             }
-                                .editMeta { meta -> meta.persistentDataContainer.remove(NamespacedKey("gma", "itembuilder")) }
                                 .build()
 
                             var slot = event.hotbarButton

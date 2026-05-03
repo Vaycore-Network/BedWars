@@ -4,6 +4,7 @@ import de.c4vxl.bedwars.Main
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
+import de.c4vxl.bedwars.item.Booster
 import de.c4vxl.gamemanager.gma.player.GMAPlayer
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.utils.ItemBuilder
@@ -67,6 +68,15 @@ data class ShopItem(
      * @param player The player to receive the item
      */
     fun builder(player: GMAPlayer): ItemBuilder {
+        // Handle custom items
+        if (materialName.startsWith("custom:")) {
+            val lang = player.language.child("bedwars")
+            return when (materialName.lowercase().removePrefix("custom:")) {
+                "booster" -> Booster.item(lang)
+                else -> error("Invalid custom item '${materialName}'")
+            }
+        }
+
         val material = getMaterial(materialName, player.team)
         return ItemBuilder(material, unbreakable = true)
             .let { key?.let { k -> it.translatable(k) } ?: it }

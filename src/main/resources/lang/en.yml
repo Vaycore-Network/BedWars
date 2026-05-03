@@ -61,6 +61,9 @@
 "item.potion.invisibility.1": "<gold>Invisibility <gray>- Level 1</gray></gold>"
 "item.potion.invisibility.2": "<gold>Invisibility <gray>- Level 2</gray></gold>"
 
+"item.custom.booster.name": "<gold>Booster <gray>| Right click</gray></gold>"
+"item.custom.booster.desc": "<gray>Right clicking this item allows you to boost yourself into the air!</gray>"
+
 "game.shop.name": "<red>Shop</red>"
 "game.shop.buy.fail": "${prefix} <red>Sorry!</red> But you don't have enough currency to buy this item!"
 "game.shop.armor.buy.fail": "${prefix} <gray>You already have better armor than that!</gray>"
