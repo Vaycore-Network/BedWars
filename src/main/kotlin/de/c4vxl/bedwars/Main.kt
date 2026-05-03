@@ -60,6 +60,7 @@ class Main : JavaPlugin() {
         ItemTranslationHandler()
         SpawnerHandler()
         ScoreboardHandler()
+        ShopHandler()
 
         logger.info("[+] $name has been enabled!")
     }
