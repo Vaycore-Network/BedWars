@@ -1,0 +1,45 @@
+{
+  "BLOCKS": {
+    "19": { "materialName": "variant:primary", "amount": 16, "currencyName": "BRICK", "cost": 8 },
+    "20": { "materialName": "variant:glass", "amount": 8, "currencyName": "BRICK", "cost": 8 },
+    "21": { "materialName": "variant:wool", "amount": 8, "currencyName": "BRICK", "cost": 6 },
+    "22": { "materialName": "OAK_PLANKS", "amount": 8, "currencyName": "BRICK", "cost": 24 },
+    "23": { "materialName": "END_STONE", "amount": 4, "currencyName": "BRICK", "cost": 32 },
+    "24": { "materialName": "IRON_BLOCK", "amount": 2, "currencyName": "IRON_INGOT", "cost": 8 },
+    "25": { "materialName": "OBSIDIAN", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
+    "28": { "materialName": "LADDER", "amount": 4, "currencyName": "BRICK", "cost": 4 }
+  },
+
+  "WEAPONS": {
+    "19": { "materialName": "STONE_SWORD", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.sword.1" },
+    "20": { "materialName": "IRON_SWORD", "amount": 1, "currencyName": "IRON_INGOT", "cost": 8, "key": "item.sword.2" },
+    "21": { "materialName": "DIAMOND_SWORD", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 6, "key": "item.sword.3" },
+    "23": { "materialName": "STONE_AXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.axe.1" },
+    "24": { "materialName": "IRON_AXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.axe.2" },
+    "25": { "materialName": "DIAMOND_AXE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1, "key": "item.axe.3" },
+    "30": { "materialName": "STONE_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.pickaxe.1" },
+    "31": { "materialName": "IRON_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.pickaxe.2" },
+    "32": { "materialName": "DIAMOND_PICKAXE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1, "key": "item.pickaxe.3" }
+  },
+
+  "ARMOR": {
+    "19": { "materialName": "CHAINMAIL_CHESTPLATE", "amount": 1, "currencyName": "BRICK", "cost": 64, "key":"item.armor.1" },
+    "20": { "materialName": "IRON_CHESTPLATE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 16, "key": "item.armor.2" },
+    "21": { "materialName": "DIAMOND_CHESTPLATE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 16, "key": "item.armor.3" }
+  },
+
+  "CONSUMABLES": {
+    "19": { "materialName": "POTION", "effect": "JUMP:0:60", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.potion.jump.1" },
+    "28": { "materialName": "POTION", "effect": "JUMP:1:60", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.potion.jump.2" },
+    "21": { "materialName": "POTION", "effect": "SPEED:0:30", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4, "key": "item.potion.speed.1" },
+    "30": { "materialName": "POTION", "effect": "SPEED:1:30", "amount": 1, "currencyName": "IRON_INGOT", "cost": 8, "key": "item.potion.speed.2" },
+    "23": { "materialName": "POTION", "effect": "HEAL:0:1", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.potion.heal.1" },
+    "32": { "materialName": "POTION", "effect": "HEAL:1:1", "amount": 1, "currencyName": "IRON_INGOT", "cost": 5, "key": "item.potion.heal.2" },
+    "25": { "materialName": "POTION", "effect": "INVISIBILITY:0:15", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 2, "key": "item.potion.invisibility.1" },
+    "34": { "materialName": "POTION", "effect": "INVISIBILITY:0:30", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3, "key": "item.potion.invisibility.2" }
+  },
+
+  "SPECIAL": {
+
+  }
+}

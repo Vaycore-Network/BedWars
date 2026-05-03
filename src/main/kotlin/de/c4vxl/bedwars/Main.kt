@@ -50,8 +50,9 @@ class Main : JavaPlugin() {
                 }
             }
 
-        // Save team config
+        // Save configs
         saveResource("teams.yml", false)
+        saveResource("shop.json", false)
 
         // Register handlers
         GameHandler()

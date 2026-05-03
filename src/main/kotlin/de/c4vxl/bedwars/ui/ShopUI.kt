@@ -1,5 +1,6 @@
 package de.c4vxl.bedwars.ui
 
+import de.c4vxl.bedwars.data.shop.ShopData
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
@@ -16,8 +17,8 @@ import org.bukkit.event.inventory.InventoryClickEvent
 
 class ShopUI(
     val player: Player,
-    language: Language = player.language.child("bedwars"),
-    team: Team = player.gma.team!!
+    private val language: Language = player.language.child("bedwars"),
+    private val team: Team = player.gma.team!!
 ) {
     enum class Page {
         BLOCKS,
@@ -27,19 +28,14 @@ class ShopUI(
         SPECIAL
     }
 
-    private var marginItem = ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, Component.empty()).build()
+    private var marginItem = ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, Component.empty())
+        .onEvent(InventoryClickEvent::class.java) { it.isCancelled = true }.build()
 
-    val baseInventory = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
+    val baseInventory get() = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
         .apply {
             // Add margin items
-            for (range in listOf(
-                0..16,
-                36..44,
-                0..36 step 9,
-                8..44 step 9
-            )) {
-                for (i in range) { setItem(i, marginItem) }
-            }
+            for (i in 0..44)
+                setItem(i, marginItem)
 
             // Add tab items
             listOf(
@@ -57,7 +53,21 @@ class ShopUI(
         }
 
     fun open(page: Page = Page.BLOCKS) {
-        player.openInventory(baseInventory)
+        // Build page
+        val inv = baseInventory.apply {
+            ShopData.pages[page]?.forEach {
+                try {
+                    setItem(it.key, it.value.builder(player.gma)
+                        .build())
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+
+        // Open page
+        player.openInventory(inv)
+
         player.playSound(player.location, Sound.BLOCK_NOTE_BLOCK_PLING, 1f, 2f)
     }
 }
