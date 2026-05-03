@@ -93,7 +93,10 @@ class ShopUI(
                             }
 
                             // Create item
-                            val item = it.value.builder(player.gma).apply { amount = buyAmount * it.value.amount }
+                            val item = it.value.builder(player.gma).apply {
+                                amount = buyAmount * it.value.amount
+                                name = null
+                            }
                                 .editMeta { meta -> meta.persistentDataContainer.remove(NamespacedKey("gma", "itembuilder")) }
                                 .build()
 
@@ -111,6 +114,11 @@ class ShopUI(
                                 }
 
                                 player.inventory.setItem(slot, null)
+                            }
+
+                            // Remove wooden sword if player buys another one
+                            if (item.type.name.endsWith("_SWORD")) {
+                                player.inventory.remove(Material.WOODEN_SWORD)
                             }
 
                             // Give item
