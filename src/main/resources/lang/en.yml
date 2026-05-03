@@ -63,6 +63,8 @@
 
 "item.custom.booster.name": "<gold>Booster <gray>| Right click</gray></gold>"
 "item.custom.booster.desc": "<gray>Right clicking this item allows you to boost yourself into the air!</gray>"
+"item.custom.last_chance.name": "<gold>Last Chance <gray>| Right click</gray></gold>"
+"item.custom.last_chance.desc": "<gray>Places a safe plattform underneath you to save your fall.</gray>"
 
 "game.shop.name": "<red>Shop</red>"
 "game.shop.buy.fail": "${prefix} <red>Sorry!</red> But you don't have enough currency to buy this item!"

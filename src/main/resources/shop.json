@@ -40,6 +40,7 @@
   },
 
   "SPECIAL": {
-    "19": { "materialName": "custom:booster", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.custom.booster.name" }
+    "19": { "materialName": "custom:booster", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6 },
+    "20": { "materialName": "custom:last_chance", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 }
   }
 }
