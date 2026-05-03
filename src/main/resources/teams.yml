@@ -2,52 +2,52 @@ blocks:
   0:
     primary: RED_CONCRETE
     glass: RED_STAINED_GLASS
-    WOOL: RED_WOOL
+    wool: RED_WOOL
 
   1:
     primary: BLUE_CONCRETE
     glass: BLUE_STAINED_GLASS
-    WOOL: BLUE_WOOL
+    wool: BLUE_WOOL
 
   2:
     primary: LIGHT_BLUE_CONCRETE
     glass: LIGHT_BLUE_STAINED_GLASS
-    WOOL: LIGHT_BLUE_WOOL
+    wool: LIGHT_BLUE_WOOL
 
   3:
     primary: PURPLE_CONCRETE
     glass: PURPLE_STAINED_GLASS
-    WOOL: PURPLE_WOOL
+    wool: PURPLE_WOOL
 
   4:
     primary: YELLOW_CONCRETE
     glass: YELLOW_STAINED_GLASS
-    WOOL: YELLOW_WOOL
+    wool: YELLOW_WOOL
 
   5:
     primary: GREEN_CONCRETE
     glass: GREEN_STAINED_GLASS
-    WOOL: GREEN_WOOL
+    wool: GREEN_WOOL
 
   6:
     primary: ORANGE_CONCRETE
     glass: ORANGE_STAINED_GLASS
-    WOOL: ORANGE_WOOL
+    wool: ORANGE_WOOL
 
   7:
     primary: BLACK_CONCRETE
     glass: BLACK_STAINED_GLASS
-    WOOL: BLACK_WOOL
+    wool: BLACK_WOOL
 
   8:
     primary: WHITE_CONCRETE
     glass: WHITE_STAINED_GLASS
-    WOOL: WHITE_WOOL
+    wool: WHITE_WOOL
 
   9:
     primary: GRAY_CONCRETE
     glass: GRAY_STAINED_GLASS
-    WOOL: GRAY_WOOL
+    wool: GRAY_WOOL
 
 colors:
   # RED
