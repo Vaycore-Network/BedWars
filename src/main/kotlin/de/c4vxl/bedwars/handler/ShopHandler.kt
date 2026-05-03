@@ -1,7 +1,9 @@
 package de.c4vxl.bedwars.handler
 
 import de.c4vxl.bedwars.Main
+import de.c4vxl.bedwars.ui.ShopUI
 import de.c4vxl.bedwars.utils.NPCUtils
+import de.c4vxl.bedwars.utils.NPCUtils.injectPacketHandler
 import de.c4vxl.bedwars.utils.NPCUtils.renderNPC
 import de.c4vxl.bedwars.utils.NPCUtils.sendNPCRotation
 import de.c4vxl.bedwars.utils.NPCUtils.skin
@@ -11,11 +13,13 @@ import de.c4vxl.gamemanager.gma.event.game.GameWorldLoadedEvent
 import de.c4vxl.gamemanager.gma.event.player.GamePlayerSpectateStartEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language.Companion.language
+import net.minecraft.network.protocol.game.ServerboundInteractPacket
 import org.bukkit.Bukkit
 import org.bukkit.Location
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.player.PlayerJoinEvent
 
 /**
  * Handles the shops:
@@ -57,6 +61,24 @@ class ShopHandler : Listener {
         }
 
         game.gameData["shopEntities"] = shopEntities
+    }
+
+    @EventHandler
+    fun onJoin(event: PlayerJoinEvent) {
+        event.player.injectPacketHandler("npc_interact", ServerboundInteractPacket::class.java) { packet ->
+            val game = event.player.gma.game ?: return@injectPacketHandler
+            val id = packet.entityId
+            val shops: Map<Player, List<Pair<Location, Int>>> = game.gameData["shopEntities"] ?: mutableMapOf()
+
+            // NPC is not a shop
+            if (shops[event.player]?.find { it.second == id } == null)
+                return@injectPacketHandler
+
+            // Open shop ui
+            Bukkit.getScheduler().callSyncMethod(Main.instance) {
+                ShopUI(event.player).open()
+            }
+        }
     }
 
     @EventHandler
