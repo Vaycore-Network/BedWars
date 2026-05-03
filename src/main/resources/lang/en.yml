@@ -18,6 +18,7 @@
 "game.scoreboard.team.self": " <gray>(You)</gray>"
 "game.scoreboard.map": "<red>Map:</red> <white>$0</white>"
 
+"game.crafting.disabled": "${prefix} <red>Crafting is not allowed in this game!</red>"
 "game.started.broadcast": "${prefix} Welcome to <gold><b>BedWars</b></gold>!<br>${prefix} <gray>Gear up, defend your base and destroy the beds of other teams to win the game.<br><br>${prefix} <red>Map:</red> <white>$0</white></gray>"
 "game.player.death": "${prefix} <gray><white>$0</white> has died!</gray>"
 "game.player.killed": "${prefix} <gray><white>$0</white> has been killed by <white>$1</white>!</gray>"

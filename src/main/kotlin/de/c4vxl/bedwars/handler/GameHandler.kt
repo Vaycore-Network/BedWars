@@ -4,11 +4,13 @@ import de.c4vxl.bedwars.Main
 import de.c4vxl.gamemanager.gma.event.game.GameStartedEvent
 import de.c4vxl.gamemanager.gma.event.game.GameWorldLoadedEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
+import de.c4vxl.gamemanager.language.Language.Companion.language
 import org.bukkit.Bukkit
 import org.bukkit.GameRules
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.player.PlayerSwapHandItemsEvent
 import kotlin.time.measureTime
@@ -28,6 +30,15 @@ class GameHandler : Listener {
             event.game.worldManager.map?.name ?: "",
             child = "bedwars"
         )
+    }
+
+    @EventHandler
+    fun onCraft(event: CraftItemEvent) {
+        val player = event.whoClicked as? Player ?: return
+        val game = player.gma.game ?: return
+
+        event.isCancelled = true
+        player.sendMessage(player.language.getCmp("game.crafting.disabled"))
     }
 
     @EventHandler
