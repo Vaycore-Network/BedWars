@@ -65,4 +65,19 @@ object TeamData {
                 .map { team.getLeatherPiece(it, this.bukkitPlayer) }
                 .toTypedArray()
     }
+
+    enum class BlockVariant {
+        PRIMARY,
+        GLASS,
+        WOOL
+    }
+
+    /**
+     * Returns the team colored version of a block variant
+     * @param variant The type of block
+     */
+    fun Team.getBlockVariant(variant: BlockVariant) =
+        config.getString("blocks.${this.id}.${variant.name.lowercase()}")
+            ?.let { Material.getMaterial(it) }
+            ?: run { throw RuntimeException("Couldn't find block variant '${variant.name}' for Team '${this.id}'") }
 }
