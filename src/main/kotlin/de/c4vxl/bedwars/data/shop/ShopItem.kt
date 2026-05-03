@@ -68,7 +68,7 @@ data class ShopItem(
      */
     fun builder(player: GMAPlayer): ItemBuilder {
         val material = getMaterial(materialName, player.team)
-        return ItemBuilder(material)
+        return ItemBuilder(material, unbreakable = true)
             .let { key?.let { k -> it.translatable(k) } ?: it }
             .editMeta { meta ->
                 // Add potion effect
