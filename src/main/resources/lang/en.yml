@@ -38,3 +38,10 @@
 "spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
 
 "item.armor.leather.name": "<gray>Leather armor</gray>"
+
+"game.shop.name": "<red>Shop</red>"
+"ui.shop.title": "<red>Shop</red>"
+"ui.shop.tab.blocks": "<gold><b>Blocks</b></gold>"
+"ui.shop.tab.weapons": "<gold><b>Weapons</b></gold>"
+"ui.shop.tab.armor": "<gold><b>Armor</b></gold>"
+"ui.shop.tab.consumables": "<gold><b>Consumables</b></gold>"
