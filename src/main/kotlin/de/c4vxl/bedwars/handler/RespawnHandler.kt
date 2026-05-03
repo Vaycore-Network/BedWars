@@ -1,13 +1,18 @@
 package de.c4vxl.bedwars.handler
 
 import de.c4vxl.bedwars.Main
+import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.equipTeamArmor
+import de.c4vxl.bedwars.data.TeamData.getBlockVariant
+import de.c4vxl.gamemanager.gma.event.player.GamePlayerDeathEvent
 import de.c4vxl.gamemanager.gma.event.player.GamePlayerEquipEvent
 import de.c4vxl.gamemanager.gma.event.player.GamePlayerRespawnEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.gma.team.Team
+import de.c4vxl.gamemanager.utils.ItemBuilder
 import net.kyori.adventure.title.TitlePart
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -34,7 +39,42 @@ class RespawnHandler : Listener {
 
     @EventHandler
     fun onEquip(event: GamePlayerEquipEvent) {
-        event.player.equipTeamArmor()
+        val armor = event.player.bukkitPlayer.inventory.armorContents
+
+        // Reset player
+        event.player.reset()
+
+        // Equip armor
+        if (event.reason == GamePlayerEquipEvent.Reason.RESPAWN)
+            event.player.bukkitPlayer.inventory.armorContents = armor
+        else if (event.reason == GamePlayerEquipEvent.Reason.GAME_START)
+            event.player.equipTeamArmor()
+
+        // Equip sword
+        event.player.bukkitPlayer.inventory.setItem(0, ItemBuilder(Material.WOODEN_SWORD).build())
+    }
+
+    @EventHandler
+    fun onDeath(event: GamePlayerDeathEvent) {
+        val keep = listOf(
+            Material.IRON_INGOT,
+            Material.BRICK,
+            Material.GOLD_INGOT,
+            Material.FLINT_AND_STEEL,
+            event.player.team?.getBlockVariant(TeamData.BlockVariant.PRIMARY)
+        )
+
+        event.deathEvent.keepInventory = true
+
+        // Give specific item types to killer
+        event.player.bukkitPlayer.killer?.let { killer ->
+            event.player.bukkitPlayer.inventory.storageContents
+                .filterNotNull()
+                .filter { keep.contains(it.type) }
+                .forEach {
+                    killer.inventory.addItem(it)
+                }
+        }
     }
 
     @EventHandler
