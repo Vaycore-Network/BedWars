@@ -49,13 +49,14 @@ class ShopUI(
                 Page.CONSUMABLES to Material.POTION,
                 Page.SPECIAL to Material.NETHER_STAR
             ).forEachIndexed { i, (tab, display) ->
-                setItem(2 + i, ItemBuilder(display, language.getCmp("ui.shop.tab.${tab.name.lowercase()}"))
+                setItem(2 + i, ItemBuilder(display)
                     .onEvent(InventoryClickEvent::class.java) { open(tab) }
+                    .editMeta { it.customName(language.getCmp("ui.shop.tab.${tab.name.lowercase()}")) }
                     .build())
             }
         }
 
-    fun open(page: Page) {
+    fun open(page: Page = Page.BLOCKS) {
         player.openInventory(baseInventory)
         player.playSound(player.location, Sound.BLOCK_NOTE_BLOCK_PLING, 1f, 2f)
     }
