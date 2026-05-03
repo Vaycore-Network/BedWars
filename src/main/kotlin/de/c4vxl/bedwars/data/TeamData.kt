@@ -48,9 +48,6 @@ object TeamData {
             player.language.child("bedwars").getCmp("item.armor.leather.name")
         )
             .editMeta { meta -> (meta as LeatherArmorMeta).setColor(this.color) }
-            .onEvent(PlayerDropItemEvent::class.java) { it.isCancelled = true }
-            .onEvent(InventoryClickEvent::class.java) { it.isCancelled = true }
-            .onEvent(PlayerSwapHandItemsEvent::class.java) { it.isCancelled = true }
             .build()
     }
 
