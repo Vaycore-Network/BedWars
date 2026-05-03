@@ -27,6 +27,9 @@ dependencies {
 
     // GameManagementAPI
     implementation("de.c4vxl:gamemanagementapi:1.0.0")
+
+    // JSON parsing
+    implementation("com.google.code.gson:gson:2.14.0")
 }
 
 kotlin {
