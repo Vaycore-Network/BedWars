@@ -4,10 +4,11 @@ import com.google.common.collect.ImmutableMultimap
 import com.mojang.authlib.GameProfile
 import com.mojang.authlib.properties.Property
 import com.mojang.authlib.properties.PropertyMap
-import io.netty.buffer.Unpooled
+import io.netty.channel.ChannelDuplexHandler
+import io.netty.channel.ChannelHandlerContext
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
-import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.*
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
@@ -16,7 +17,6 @@ import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.GameType
-import net.minecraft.world.level.Level
 import net.minecraft.world.level.storage.ValueInput
 import net.minecraft.world.level.storage.ValueOutput
 import net.minecraft.world.phys.Vec3
@@ -42,7 +42,6 @@ object NPCUtils {
 
         // Get player info
         val player = (this as CraftPlayer).handle
-        val level = player.level()
         val connection = player.connection
 
         // Create profile
@@ -131,6 +130,38 @@ object NPCUtils {
         val dx = from.x - to.x
         val dz = from.z - to.z
         return Math.toDegrees(atan2(-dx, dz)).toFloat()
+    }
+
+    /**
+     * Injects a custom packet handler into a player
+     * @param name The name of the packet injector
+     * @param packet The packet to inject
+     * @param handler The handler for the packet
+     */
+    fun <T : Packet<ServerGamePacketListener>> Player.injectPacketHandler(name: String, packet: Class<out T>, handler: (packet: T) -> Unit) {
+        val player = (this as CraftPlayer).handle
+        val connection = player.connection
+        val channel = connection.connection.channel
+
+        // Already injected
+        if (channel.pipeline().get(name) != null)
+            return
+
+        channel.pipeline().addBefore(
+            "packet_handler",
+            name,
+            object : ChannelDuplexHandler() {
+                override fun channelRead(ctx: ChannelHandlerContext?, msg: Any?) {
+                    msg ?: return
+
+                    @Suppress("UNCHECKED_CAST")
+                    if (msg::class.simpleName == packet.simpleName)
+                        handler.invoke(msg as T)
+
+                    super.channelRead(ctx, msg)
+                }
+            }
+        )
     }
 
     /**
