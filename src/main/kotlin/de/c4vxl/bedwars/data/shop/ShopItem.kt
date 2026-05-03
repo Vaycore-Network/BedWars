@@ -47,6 +47,11 @@ data class ShopItem(
     }
 
     /**
+     * Returns the currency material required to pay for that item
+     */
+    val currency: Material get() = getMaterial(currencyName)
+
+    /**
      * Returns the potion effect of this item (if present)
      */
     val potionEffect: PotionEffect? get() =

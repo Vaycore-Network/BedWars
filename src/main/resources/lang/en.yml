@@ -61,9 +61,15 @@
 "item.potion.invisibility.2": "<gold>Invisibility <gray>- Level 2</gray></gold>"
 
 "game.shop.name": "<red>Shop</red>"
+"game.shop.buy.fail": "${prefix} <red>Sorry!</red> But you don't have enough currency to buy this item!"
+"game.shop.armor.buy.fail": "${prefix} <gray>You already have better armor than that!</gray>"
 "ui.shop.title": "<red>Shop</red>"
 "ui.shop.tab.blocks": "<gold><b>Blocks</b></gold>"
 "ui.shop.tab.weapons": "<gold><b>Weapons</b></gold>"
 "ui.shop.tab.armor": "<gold><b>Armor</b></gold>"
 "ui.shop.tab.consumables": "<gold><b>Consumables</b></gold>"
 "ui.shop.tab.special": "<gold><b>Special</b></gold>"
+
+"ui.shop.buyable.lore.1": "<gray>Price: <white>$0 <gold><lang:$1></gold></white></gray>"
+"ui.shop.buyable.lore.2": "<gray>Left click: <white>buy one</white></gray>"
+"ui.shop.buyable.lore.3": "<gray>Shift click: <white>buy stack</white></gray>"
