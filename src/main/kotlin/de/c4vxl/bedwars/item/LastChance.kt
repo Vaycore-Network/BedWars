@@ -3,6 +3,7 @@ package de.c4vxl.bedwars.item
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
+import de.c4vxl.bedwars.handler.MapHandler
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ItemBuilder
@@ -48,6 +49,7 @@ object LastChance {
      * @param player The player that placed the plattform
      */
     private fun placePlattform(player: Player, item: ItemStack) {
+        val game = player.gma.game ?: return
         val team = player.gma.team ?: return
         val block = team.getBlockVariant(TeamData.BlockVariant.GLASS)
         val blocks = plattformLocation(player.location.subtract(0.0, 3.0, 0.0))
@@ -56,9 +58,7 @@ object LastChance {
             .filter { it.type.isAir || it.isLiquid || !it.isSolid }
             .forEach {
                 // Track blocks as "placed by a player"
-                @Suppress("UnstableApiUsage")
-                BlockPlaceEvent(it, it.state, it, item, player, true, player.handRaised)
-                    .callEvent()
+                MapHandler.track(game, it)
 
                 it.type = block
             }

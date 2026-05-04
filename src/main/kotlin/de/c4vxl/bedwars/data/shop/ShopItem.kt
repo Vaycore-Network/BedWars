@@ -72,13 +72,15 @@ data class ShopItem(
         if (materialName.startsWith("custom:")) {
             val lang = player.language.child("bedwars")
             return when (materialName.lowercase().removePrefix("custom:")) {
-                "booster"       -> Booster.item(lang)
-                "last_chance"   -> LastChance.item(lang)
-                "warp_pearl"    -> WarpPearl.item(lang)
-                "portable_shop" -> PortableShop.item(lang)
-                "fireball"      -> Fireball.item(lang)
-                "cloud_block"   -> CloudBlock.item(lang)
-                "team_chest"    -> TeamChest.item(lang)
+                "booster"        -> Booster.item(lang)
+                "last_chance"    -> LastChance.item(lang)
+                "warp_pearl"     -> WarpPearl.item(lang)
+                "portable_shop"  -> PortableShop.item(lang)
+                "fireball"       -> Fireball.item(lang)
+                "cloud_block"    -> CloudBlock.item(lang)
+                "team_chest"     -> TeamChest.item(lang)
+                "instant_bridge" -> InstantBridge.item(lang)
+                "instant_stairs" -> InstantStairs.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }

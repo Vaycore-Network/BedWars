@@ -78,6 +78,11 @@
 "item.custom.cloud_block.desc.1": "<gray>These blocks break themselves</gray>"
 "item.custom.team_chest.name": "<gold>Team Chest <gray>| Right click</gray></gold>"
 "item.custom.team_chest.desc.1": "<gray>A shared team chest</gray>"
+"item.custom.instant_bridge.name": "<gold>Instant bridge <gray>| Right click</gray></gold>"
+"item.custom.instant_bridge.desc.1": "<gray>Automatically constructs a bridge for you</gray>"
+"item.custom.instant_stairs.name": "<gold>Instant stairs <gray>| Right click</gray></gold>"
+"item.custom.instant_stairs.desc.1": "<gray>Automatically constructs a stair-bridge for you</gray>"
+
 
 "game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"
 

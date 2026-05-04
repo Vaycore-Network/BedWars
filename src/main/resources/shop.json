@@ -8,7 +8,9 @@
     "24": { "materialName": "IRON_BLOCK", "amount": 2, "currencyName": "IRON_INGOT", "cost": 8 },
     "25": { "materialName": "OBSIDIAN", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
     "28": { "materialName": "LADDER", "amount": 4, "currencyName": "BRICK", "cost": 4 },
-    "29": { "materialName": "PACKED_ICE", "amount": 4, "currencyName": "IRON_INGOT", "cost": 1 }
+    "29": { "materialName": "PACKED_ICE", "amount": 4, "currencyName": "IRON_INGOT", "cost": 1 },
+    "31": { "materialName": "custom:instant_bridge", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 },
+    "32": { "materialName": "custom:instant_stairs", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 }
   },
 
   "WEAPONS": {
