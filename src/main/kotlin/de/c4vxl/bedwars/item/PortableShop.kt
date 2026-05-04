@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerInteractEvent
 object PortableShop {
     fun item(language: Language) =
         ItemBuilder(
-            Material.FLINT_AND_STEEL,
+            Material.TRAPPED_CHEST,
             lore = listOf(language.getCmp("item.custom.portable_shop.desc.1")),
             key = "bw_portable_shop"
         )

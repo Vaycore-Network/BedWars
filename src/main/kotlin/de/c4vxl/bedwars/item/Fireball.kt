@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerInteractEvent
 object Fireball {
     fun item(language: Language) =
         ItemBuilder(
-            Material.FLINT_AND_STEEL,
+            Material.FIRE_CHARGE,
             lore = listOf(language.getCmp("item.custom.fireball.desc.1")),
             key = "bw_fireball"
         )

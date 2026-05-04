@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent
 object WarpPearl {
     fun item(language: Language) =
         ItemBuilder(
-            Material.FLINT_AND_STEEL,
+            Material.ENDER_PEARL,
             lore = listOf(language.getCmp("item.custom.warp_pearl.desc.1"), language.getCmp("item.custom.warp_pearl.desc.2")),
             key = "bw_warp_pearl"
         )
