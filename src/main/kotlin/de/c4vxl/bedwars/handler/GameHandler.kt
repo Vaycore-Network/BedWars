@@ -7,9 +7,12 @@ import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language.Companion.language
 import org.bukkit.Bukkit
 import org.bukkit.GameRules
+import org.bukkit.Material
+import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.entity.FoodLevelChangeEvent
 import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
@@ -75,5 +78,18 @@ class GameHandler : Listener {
             return
 
         event.isCancelled = true
+    }
+
+    @EventHandler
+    fun onTnT(event: BlockPlaceEvent) {
+        if (!event.player.gma.isInGame)
+            return
+
+        if (event.block.type != Material.TNT)
+            return
+
+        // Automatically prime the tnt
+        event.block.type = Material.AIR
+        event.block.world.spawnEntity(event.block.location.toCenterLocation(), EntityType.TNT)
     }
 }

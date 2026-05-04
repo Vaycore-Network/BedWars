@@ -49,6 +49,7 @@
     "23": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
     "24": { "materialName": "ENDER_PEARL", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 },
     "25": { "materialName": "custom:warp_pearl", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 4 },
-    "26": { "materialName": "custom:portable_shop", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 }
+    "26": { "materialName": "custom:portable_shop", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
+    "27": { "materialName": "TNT", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2 }
   }
 }
