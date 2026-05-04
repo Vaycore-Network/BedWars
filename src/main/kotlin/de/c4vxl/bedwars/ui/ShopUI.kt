@@ -50,7 +50,7 @@ class ShopUI(
             ).forEachIndexed { i, (tab, display) ->
                 setItem(2 + i, ItemBuilder(display)
                     .onEvent(InventoryClickEvent::class.java) { open(tab) }
-                    .editMeta { it.customName(language.getCmp("ui.shop.tab.${tab.name.lowercase()}")) }
+                    .editMeta { it.itemName(language.getCmp("ui.shop.tab.${tab.name.lowercase()}")) }
                     .build())
             }
         }
