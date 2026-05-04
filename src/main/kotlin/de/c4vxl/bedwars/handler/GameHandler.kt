@@ -62,6 +62,7 @@ class GameHandler : Listener {
         world.setGameRule(GameRules.SPAWN_MONSTERS, false)
         world.setGameRule(GameRules.SPAWN_WANDERING_TRADERS, false)
         world.setGameRule(GameRules.SPAWN_PHANTOMS, false)
+        world.setGameRule(GameRules.LOCATOR_BAR, false)
         world.time = 6000
     }
 
