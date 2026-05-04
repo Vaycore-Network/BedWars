@@ -15,6 +15,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.inventory.InventoryAction
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.inventory.ItemStack
+import java.util.UUID
 import kotlin.math.floor
 import kotlin.math.min
 
@@ -73,6 +74,7 @@ class ShopUI(
                                 add(language.getCmp("ui.shop.buyable.lore.2"))
                                 add(language.getCmp("ui.shop.buyable.lore.3"))
                             }
+                            key = UUID.randomUUID().toString()
                         }
                         .onEvent(InventoryClickEvent::class.java) { event ->
                             event.isCancelled = true
