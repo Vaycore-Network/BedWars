@@ -21,7 +21,8 @@ object LastChance {
     fun item(language: Language) =
         ItemBuilder(
             Material.BLAZE_ROD,
-            lore = listOf(language.getCmp("item.custom.last_chance.desc.1"), language.getCmp("item.custom.last_chance.desc.2"))
+            lore = listOf(language.getCmp("item.custom.last_chance.desc.1"), language.getCmp("item.custom.last_chance.desc.2")),
+            key = "bw_last_chance"
         )
             .onEvent(PlayerInteractEvent::class.java) { event ->
                 if (!event.action.isRightClick)

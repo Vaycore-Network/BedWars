@@ -15,7 +15,8 @@ object Booster {
     fun item(language: Language) =
         ItemBuilder(
             Material.FLINT_AND_STEEL,
-            lore = listOf(language.getCmp("item.custom.booster.desc.1"), language.getCmp("item.custom.booster.desc.2"))
+            lore = listOf(language.getCmp("item.custom.booster.desc.1"), language.getCmp("item.custom.booster.desc.2")),
+            key = "bw_booster"
         )
             .onEvent(PlayerInteractEvent::class.java) { event ->
                 if (!event.action.isRightClick)

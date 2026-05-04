@@ -101,6 +101,8 @@ class ShopUI(
                             val item = it.value.builder(player.gma).apply {
                                 amount = buyAmount * it.value.amount
                                 lore = emptyList()
+
+                                key = key.takeIf { k -> k.startsWith("bw_") } ?: "___"
                             }
                                 .build()
 

@@ -17,7 +17,8 @@ object WarpPearl {
     fun item(language: Language) =
         ItemBuilder(
             Material.FLINT_AND_STEEL,
-            lore = listOf(language.getCmp("item.custom.warp_pearl.desc.1"), language.getCmp("item.custom.warp_pearl.desc.2"))
+            lore = listOf(language.getCmp("item.custom.warp_pearl.desc.1"), language.getCmp("item.custom.warp_pearl.desc.2")),
+            key = "bw_warp_pearl"
         )
             .onEvent(PlayerInteractEvent::class.java) { event ->
                 if (!event.action.isRightClick)
