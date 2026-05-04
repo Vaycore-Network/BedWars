@@ -30,8 +30,6 @@ object CloudBlock {
                     onEvent(BlockPlaceEvent::class.java) { event ->
                         animateBlockBreak(event.block, 3)
                     }
-
-                    println("events")
                 }
 
                 eventsInitialized = true
