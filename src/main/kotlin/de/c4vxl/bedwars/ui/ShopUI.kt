@@ -139,6 +139,9 @@ class ShopUI(
 
                             // Remove currency
                             player.inventory.removeItemAnySlot(ItemStack(it.value.currency, it.value.cost * buyAmount))
+
+                            // Play sound
+                            player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 2f, 2f)
                         }
                         .build())
                 } catch (e: Exception) {
