@@ -82,8 +82,11 @@
 "item.custom.instant_bridge.desc.1": "<gray>Automatically constructs a bridge for you</gray>"
 "item.custom.instant_stairs.name": "<gold>Instant stairs <gray>| Right click</gray></gold>"
 "item.custom.instant_stairs.desc.1": "<gray>Automatically constructs a stair-bridge for you</gray>"
+"item.custom.base_tp.name": "<gold>Base TP <gray>| Right click</gray></gold>"
+"item.custom.base_tp.desc.1": "<gray>Teleports you to your base</gray>"
 
-
+"game.base_tp.cancelled": "${prefix} <red>Your base teleport has been cancelled!</red>"
+"game.base_tp.notice": "<red>Don't move!</red> <gray>Teleporting in <white>$0</white> seconds!</gray>"
 "game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"
 
 "game.shop.name": "<red>Shop</red>"
