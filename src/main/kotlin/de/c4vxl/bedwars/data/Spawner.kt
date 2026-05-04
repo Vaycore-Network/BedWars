@@ -29,7 +29,7 @@ data class Spawner(
     /**
      * Builds the item
      */
-    val item: ItemStack = ItemBuilder(material)
+    val item: ItemStack = ItemBuilder(material, key = "bw_spawner_item")
             // Add translation key
             .apply { translatable("item.material.${material.name.lowercase()}.name") }
             .build()
@@ -54,12 +54,12 @@ data class Spawner(
         if (!displayDelay)
             return null
 
-        val loc = location.clone().add(0.0, 1.5, 0.0)
+        val loc = location.clone().add(0.0, 2.5, 0.0)
 
         // Send spawner display item
         displayItem?.let {
             player.setHologramItem(
-                player.createHologram(loc.clone().subtract(0.0, 0.25, 0.0)) ?: return@let,
+                player.createHologram(loc.clone().add(0.0, -0.5, 0.0)) ?: return@let,
                 it
             )
         }
@@ -67,7 +67,7 @@ data class Spawner(
         // Send spawner name
         displayName?.let {
             player.setHologramText(
-                player.createHologram(loc.clone().add(0.0, 0.3, 0.0)) ?: return@let,
+                player.createHologram(loc.clone().add(0.0, 1.35, 0.0)) ?: return@let,
                 player.language.child("bedwars").getCmp(it)
             )
         }
