@@ -29,7 +29,8 @@
   "ARMOR": {
     "19": { "materialName": "CHAINMAIL_CHESTPLATE", "amount": 1, "currencyName": "BRICK", "cost": 64, "key":"item.armor.1" },
     "20": { "materialName": "IRON_CHESTPLATE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 16, "key": "item.armor.2" },
-    "21": { "materialName": "DIAMOND_CHESTPLATE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 16, "key": "item.armor.3" }
+    "21": { "materialName": "DIAMOND_CHESTPLATE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 16, "key": "item.armor.3" },
+    "23": { "materialName": "SHIELD", "amount": 1, "currencyName": "IRON_INGOT", "cost": 1 }
   },
 
   "CONSUMABLES": {
