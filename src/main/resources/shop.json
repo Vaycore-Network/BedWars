@@ -9,8 +9,9 @@
     "25": { "materialName": "OBSIDIAN", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
     "28": { "materialName": "LADDER", "amount": 4, "currencyName": "BRICK", "cost": 4 },
     "29": { "materialName": "PACKED_ICE", "amount": 4, "currencyName": "IRON_INGOT", "cost": 1 },
-    "31": { "materialName": "custom:instant_bridge", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 },
-    "32": { "materialName": "custom:instant_stairs", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 }
+    "30": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
+    "32": { "materialName": "custom:instant_bridge", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 },
+    "33": { "materialName": "custom:instant_stairs", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 }
   },
 
   "WEAPONS": {
@@ -49,7 +50,6 @@
     "20": { "materialName": "custom:last_chance", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 },
     "21": { "materialName": "GOLDEN_APPLE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 5 },
     "22": { "materialName": "WATER_BUCKET", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
-    "23": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
     "24": { "materialName": "ENDER_PEARL", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 },
     "25": { "materialName": "custom:warp_pearl", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 4 },
     "28": { "materialName": "custom:portable_shop", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
@@ -58,6 +58,7 @@
     "31": { "materialName": "custom:cloud_block", "amount": 1, "currencyName": "BRICK", "cost": 16 },
     "32": { "materialName": "custom:team_chest", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2 },
     "33": { "materialName": "custom:base_tp", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
-    "34": { "materialName": "custom:freezer", "amount": 1, "currencyName": "IRON_INGOT", "cost": 12 }
+    "34": { "materialName": "custom:freezer", "amount": 1, "currencyName": "IRON_INGOT", "cost": 12 },
+    "23": { "materialName": "custom:tracker", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 }
   }
 }
