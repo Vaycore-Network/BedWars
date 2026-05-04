@@ -76,6 +76,8 @@
 "item.custom.fireball.desc.1": "<gray>A throwable explosive</gray>"
 "item.custom.cloud_block.name": "<gold>Cloud Block</gold>"
 "item.custom.cloud_block.desc.1": "<gray>These blocks break themselves</gray>"
+"item.custom.team_chest.name": "<gold>Team Chest <gray>| Right click</gray></gold>"
+"item.custom.team_chest.desc.1": "<gray>A shared team chest</gray>"
 
 "game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"
 

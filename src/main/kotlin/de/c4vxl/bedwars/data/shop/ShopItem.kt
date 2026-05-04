@@ -78,6 +78,7 @@ data class ShopItem(
                 "portable_shop" -> PortableShop.item(lang)
                 "fireball"      -> Fireball.item(lang)
                 "cloud_block"   -> CloudBlock.item(lang)
+                "team_chest"    -> TeamChest.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }
