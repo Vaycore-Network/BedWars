@@ -10,8 +10,8 @@ import org.bukkit.Material
 import org.bukkit.event.player.PlayerInteractEvent
 
 /**
- * A custom booster item
- * When right-clicked a player will be boosted into the direction he is looking
+ * A custom ender pearl
+ * Teleports players back after 5 seconds
  */
 object WarpPearl {
     fun item(language: Language) =
