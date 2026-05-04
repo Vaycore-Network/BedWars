@@ -13,28 +13,36 @@ import org.bukkit.event.player.PlayerInteractEvent
  * A throwable explosive
  */
 object Fireball {
+    private var eventsInitialized = false
+
     fun item(language: Language) =
         ItemBuilder(
             Material.FIRE_CHARGE,
+            language.getCmp("item.custom.fireball.name"),
             lore = listOf(language.getCmp("item.custom.fireball.desc.1")),
             key = "bw_fireball"
         )
-            .onEvent(PlayerInteractEvent::class.java) { event ->
-                if (!event.action.isRightClick)
-                    return@onEvent
-
-                // Spawn fireball
-                (event.player.location.world.spawnEntity(
-                    event.player.eyeLocation.add(event.player.eyeLocation.direction),
-                    EntityType.FIREBALL
-                ) as Fireball).let {
-                    it.isVisualFire = true
-                    it.yield = 3.0F
-                    it.velocity = event.player.eyeLocation.direction.multiply(2.5)
-                }
-
-                event.item!!.amount -= 1
-                event.isCancelled = true
-            }
             .translatable("item.custom.fireball.name")
+            .apply {
+                if (!eventsInitialized)
+                    onEvent(PlayerInteractEvent::class.java) { event ->
+                        if (!event.action.isRightClick)
+                            return@onEvent
+
+                        // Spawn fireball
+                        (event.player.location.world.spawnEntity(
+                            event.player.eyeLocation.add(event.player.eyeLocation.direction),
+                            EntityType.FIREBALL
+                        ) as Fireball).let {
+                            it.isVisualFire = true
+                            it.yield = 3.0F
+                            it.velocity = event.player.eyeLocation.direction.multiply(2.5)
+                        }
+
+                        event.item!!.amount -= 1
+                        event.isCancelled = true
+                    }
+
+                eventsInitialized = true
+            }
 }

@@ -11,17 +11,26 @@ import org.bukkit.event.player.PlayerInteractEvent
  * A portable shop item
  */
 object PortableShop {
+    private var eventsInitialized = false
+
     fun item(language: Language) =
         ItemBuilder(
             Material.TRAPPED_CHEST,
+            language.getCmp("item.custom.portable_shop.name"),
             lore = listOf(language.getCmp("item.custom.portable_shop.desc.1")),
             key = "bw_portable_shop"
         )
-            .onEvent(PlayerInteractEvent::class.java) { event ->
-                if (!event.action.isRightClick)
-                    return@onEvent
-
-                ShopUI(event.player).open()
-            }
             .translatable("item.custom.portable_shop.name")
+            .apply {
+                if (!eventsInitialized)
+                    onEvent(PlayerInteractEvent::class.java) { event ->
+                        if (!event.action.isRightClick)
+                            return@onEvent
+
+                        ShopUI(event.player).open()
+                        event.item!!.amount -= 1
+                    }
+
+                eventsInitialized = true
+            }
 }

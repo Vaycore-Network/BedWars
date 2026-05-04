@@ -51,6 +51,7 @@
     "25": { "materialName": "custom:warp_pearl", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 4 },
     "28": { "materialName": "custom:portable_shop", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
     "29": { "materialName": "TNT", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2 },
-    "30": { "materialName": "custom:fireball", "amount": 1, "currencyName": "BRICK", "cost": 64 }
+    "30": { "materialName": "custom:fireball", "amount": 1, "currencyName": "BRICK", "cost": 64 },
+    "31": { "materialName": "custom:cloud_block", "amount": 1, "currencyName": "BRICK", "cost": 16 }
   }
 }

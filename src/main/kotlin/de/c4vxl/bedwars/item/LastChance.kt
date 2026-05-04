@@ -18,22 +18,30 @@ import org.bukkit.inventory.ItemStack
  * When used: places a plattform under the player
  */
 object LastChance {
+    private var eventsInitialized = false
+
     fun item(language: Language) =
         ItemBuilder(
             Material.BLAZE_ROD,
+            language.getCmp("item.custom.last_chance.name"),
             lore = listOf(language.getCmp("item.custom.last_chance.desc.1"), language.getCmp("item.custom.last_chance.desc.2")),
             key = "bw_last_chance"
         )
-            .onEvent(PlayerInteractEvent::class.java) { event ->
-                if (!event.action.isRightClick)
-                    return@onEvent
-
-                event.isCancelled = true
-
-                placePlattform(event.player, event.item!!)
-                event.item!!.amount -= 1
-            }
             .translatable("item.custom.last_chance.name")
+            .apply {
+                if (!eventsInitialized)
+                    onEvent(PlayerInteractEvent::class.java) { event ->
+                        if (!event.action.isRightClick)
+                            return@onEvent
+
+                        event.isCancelled = true
+
+                        placePlattform(event.player, event.item!!)
+                        event.item!!.amount -= 1
+                    }
+
+                eventsInitialized = true
+            }
 
     /**
      * Places a plattform

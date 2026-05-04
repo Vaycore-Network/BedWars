@@ -77,6 +77,7 @@ data class ShopItem(
                 "warp_pearl"    -> WarpPearl.item(lang)
                 "portable_shop" -> PortableShop.item(lang)
                 "fireball"      -> Fireball.item(lang)
+                "cloud_block"   -> CloudBlock.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }
@@ -89,7 +90,7 @@ data class ShopItem(
                 potionEffect?.let { (meta as? PotionMeta)?.addCustomEffect(it, true) }
 
                 // Set display name
-                meta.displayName(key?.let { player.language.child("bedwars").getCmp(it) }
+                meta.itemName(key?.let { player.language.child("bedwars").getCmp(it) }
                     ?: Component.translatable(material.translationKey()).color(NamedTextColor.GRAY).decorate(TextDecoration.BOLD))
             }
     }
