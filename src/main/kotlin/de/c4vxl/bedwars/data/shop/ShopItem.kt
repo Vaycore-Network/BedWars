@@ -82,6 +82,7 @@ data class ShopItem(
                 "instant_bridge" -> InstantBridge.item(lang)
                 "instant_stairs" -> InstantStairs.item(lang)
                 "base_tp"        -> BaseTp.item(lang)
+                "freezer"        -> Freezer.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }

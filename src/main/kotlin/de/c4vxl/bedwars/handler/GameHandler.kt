@@ -8,14 +8,21 @@ import de.c4vxl.gamemanager.language.Language.Companion.language
 import org.bukkit.Bukkit
 import org.bukkit.GameRules
 import org.bukkit.Material
+import org.bukkit.NamespacedKey
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
+import org.bukkit.entity.Snowball
+import org.bukkit.entity.Snowman
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.entity.FoodLevelChangeEvent
+import org.bukkit.event.entity.ProjectileHitEvent
 import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
+import org.bukkit.event.player.PlayerMoveEvent
+import org.bukkit.persistence.PersistentDataType
+import java.util.concurrent.TimeUnit
 
 /**
  * Handles general game events
@@ -91,5 +98,45 @@ class GameHandler : Listener {
         // Automatically prime the tnt
         event.block.type = Material.AIR
         event.block.world.spawnEntity(event.block.location.toCenterLocation(), EntityType.TNT)
+    }
+
+    @EventHandler
+    fun onFreezerHit(event: ProjectileHitEvent) {
+        // Not a freezer
+        if (!event.entity.persistentDataContainer.has(NamespacedKey("bedwars", "item.freezer")))
+            return
+
+        val sender = event.entity.shooter as? Player ?: return
+        val hit = event.hitEntity as? Player ?: return
+
+        // Prevent friendly fire
+        if (sender.gma.team?.id == hit.gma.team?.id)
+            return
+
+        // Mark player as frozen
+        val game = hit.gma.game ?: return
+        game.gameData["freezer.${hit.uniqueId}"] = System.nanoTime()
+    }
+
+    @EventHandler
+    fun onFreezer(event: PlayerMoveEvent) {
+        val game = event.player.gma.game ?: return
+
+        val elapsed = TimeUnit.NANOSECONDS.toSeconds(
+            System.nanoTime() - (game.gameData.get<Long>("freezer.${event.player.uniqueId}") ?: return)
+        ).toInt()
+        val secondsRemaining: Int = 5 - elapsed
+
+        // Return if time is over
+        if (secondsRemaining <= 0) {
+            game.gameData["freezer.${event.player.uniqueId}"] = null
+            return
+        }
+
+        // Send note
+        event.player.sendActionBar(event.player.language.child("bedwars").getCmp("game.frozen.notice", secondsRemaining.toString()))
+
+        // Stop movement
+        event.isCancelled = true
     }
 }

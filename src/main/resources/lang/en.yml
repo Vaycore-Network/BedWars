@@ -84,7 +84,10 @@
 "item.custom.instant_stairs.desc.1": "<gray>Automatically constructs a stair-bridge for you</gray>"
 "item.custom.base_tp.name": "<gold>Base TP <gray>| Right click</gray></gold>"
 "item.custom.base_tp.desc.1": "<gray>Teleports you to your base</gray>"
+"item.custom.freezer.name": "<gold>Freezer <gray>| Right click</gray></gold>"
+"item.custom.freezer.desc.1": "<gray>Stops players from moving for 5 seconds</gray>"
 
+"game.frozen.notice": "<gray>You have been <aqua>frozen</aqua> and cannot move for <white>$0</white> seconds!</gray>"
 "game.base_tp.cancelled": "${prefix} <red>Your base teleport has been cancelled!</red>"
 "game.base_tp.notice": "<red>Don't move!</red> <gray>Teleporting in <white>$0</white> seconds!</gray>"
 "game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"

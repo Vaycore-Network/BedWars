@@ -57,6 +57,7 @@
     "30": { "materialName": "custom:fireball", "amount": 1, "currencyName": "BRICK", "cost": 64 },
     "31": { "materialName": "custom:cloud_block", "amount": 1, "currencyName": "BRICK", "cost": 16 },
     "32": { "materialName": "custom:team_chest", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2 },
-    "33": { "materialName": "custom:base_tp", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 }
+    "33": { "materialName": "custom:base_tp", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
+    "34": { "materialName": "custom:freezer", "amount": 1, "currencyName": "IRON_INGOT", "cost": 12 }
   }
 }
