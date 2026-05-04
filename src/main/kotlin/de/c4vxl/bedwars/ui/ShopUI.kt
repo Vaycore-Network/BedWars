@@ -1,21 +1,23 @@
 package de.c4vxl.bedwars.ui
 
-import de.c4vxl.bedwars.data.shop.ShopData
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
+import de.c4vxl.bedwars.data.shop.ShopData
 import de.c4vxl.bedwars.utils.InventoryUtils.countMaterial
+import de.c4vxl.bedwars.utils.InventoryUtils.removeMaterial
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.language.Language.Companion.language
 import de.c4vxl.gamemanager.utils.ItemBuilder
 import net.kyori.adventure.text.Component
-import org.bukkit.*
+import org.bukkit.Bukkit
+import org.bukkit.Material
+import org.bukkit.Sound
 import org.bukkit.entity.Player
 import org.bukkit.event.inventory.InventoryAction
 import org.bukkit.event.inventory.InventoryClickEvent
-import org.bukkit.inventory.ItemStack
-import java.util.UUID
+import java.util.*
 import kotlin.math.floor
 import kotlin.math.min
 
@@ -138,7 +140,7 @@ class ShopUI(
                                 player.inventory.addItem(item)
 
                             // Remove currency
-                            player.inventory.removeItemAnySlot(ItemStack(it.value.currency, it.value.cost * buyAmount))
+                            player.inventory.removeMaterial(it.value.currency, it.value.cost * buyAmount)
 
                             // Play sound
                             player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 2f, 2f)
