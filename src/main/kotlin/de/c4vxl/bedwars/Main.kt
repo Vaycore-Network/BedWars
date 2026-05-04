@@ -62,6 +62,7 @@ class Main : JavaPlugin() {
         SpawnerHandler()
         ScoreboardHandler()
         ShopHandler()
+        ItemHandler()
 
         logger.info("[+] $name has been enabled!")
     }

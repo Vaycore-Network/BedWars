@@ -7,7 +7,8 @@
     "23": { "materialName": "END_STONE", "amount": 4, "currencyName": "BRICK", "cost": 32 },
     "24": { "materialName": "IRON_BLOCK", "amount": 2, "currencyName": "IRON_INGOT", "cost": 8 },
     "25": { "materialName": "OBSIDIAN", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1 },
-    "28": { "materialName": "LADDER", "amount": 4, "currencyName": "BRICK", "cost": 4 }
+    "28": { "materialName": "LADDER", "amount": 4, "currencyName": "BRICK", "cost": 4 },
+    "29": { "materialName": "PACKED_ICE", "amount": 4, "currencyName": "IRON_INGOT", "cost": 1 }
   },
 
   "WEAPONS": {
@@ -17,9 +18,10 @@
     "23": { "materialName": "STONE_AXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.axe.1" },
     "24": { "materialName": "IRON_AXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.axe.2" },
     "25": { "materialName": "DIAMOND_AXE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1, "key": "item.axe.3" },
-    "30": { "materialName": "STONE_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.pickaxe.1" },
-    "31": { "materialName": "IRON_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.pickaxe.2" },
-    "32": { "materialName": "DIAMOND_PICKAXE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1, "key": "item.pickaxe.3" }
+    "28": { "materialName": "STONE_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 2, "key": "item.pickaxe.1" },
+    "29": { "materialName": "IRON_PICKAXE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6, "key": "item.pickaxe.2" },
+    "30": { "materialName": "DIAMOND_PICKAXE", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 1, "key": "item.pickaxe.3" },
+    "32": { "materialName": "SHEARS", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 }
   },
 
   "ARMOR": {
@@ -41,6 +43,10 @@
 
   "SPECIAL": {
     "19": { "materialName": "custom:booster", "amount": 1, "currencyName": "IRON_INGOT", "cost": 6 },
-    "20": { "materialName": "custom:last_chance", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 }
+    "20": { "materialName": "custom:last_chance", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 },
+    "21": { "materialName": "GOLDEN_APPLE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 5 },
+    "22": { "materialName": "WATER_BUCKET", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
+    "23": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
+    "24": { "materialName": "ENDER_PEARL", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 }
   }
 }
