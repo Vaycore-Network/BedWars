@@ -6,6 +6,7 @@ import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
 import de.c4vxl.bedwars.item.Booster
 import de.c4vxl.bedwars.item.LastChance
+import de.c4vxl.bedwars.item.PortableShop
 import de.c4vxl.bedwars.item.WarpPearl
 import de.c4vxl.gamemanager.gma.player.GMAPlayer
 import de.c4vxl.gamemanager.gma.team.Team
@@ -74,9 +75,10 @@ data class ShopItem(
         if (materialName.startsWith("custom:")) {
             val lang = player.language.child("bedwars")
             return when (materialName.lowercase().removePrefix("custom:")) {
-                "booster"     -> Booster.item(lang)
-                "last_chance" -> LastChance.item(lang)
-                "warp_pearl"  -> WarpPearl.item(lang)
+                "booster"       -> Booster.item(lang)
+                "last_chance"   -> LastChance.item(lang)
+                "warp_pearl"    -> WarpPearl.item(lang)
+                "portable_shop" -> PortableShop.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }
