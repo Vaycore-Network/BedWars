@@ -10,10 +10,9 @@ import org.bukkit.GameRules
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.entity.FoodLevelChangeEvent
 import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
-import org.bukkit.event.player.PlayerSwapHandItemsEvent
-import kotlin.time.measureTime
 
 /**
  * Handles general game events
@@ -47,6 +46,12 @@ class GameHandler : Listener {
 
         world.setGameRule(GameRules.KEEP_INVENTORY, true) // Item dropping will be handled separately
         world.setGameRule(GameRules.RANDOM_TICK_SPEED, 0)
+        world.setGameRule(GameRules.ADVANCE_TIME, false)
+        world.setGameRule(GameRules.ADVANCE_WEATHER, false)
+        world.setGameRule(GameRules.SPAWN_MOBS, false)
+        world.setGameRule(GameRules.SPAWN_MONSTERS, false)
+        world.setGameRule(GameRules.SPAWN_WANDERING_TRADERS, false)
+        world.setGameRule(GameRules.SPAWN_PHANTOMS, false)
         world.time = 6000
     }
 
@@ -56,6 +61,17 @@ class GameHandler : Listener {
         val game = player.gma.game ?: return
 
         if (event.slot !in 36..39)
+            return
+
+        event.isCancelled = true
+    }
+
+    @EventHandler
+    fun onHunger(event: FoodLevelChangeEvent) {
+        val player = event.entity as? Player ?: return
+
+        // Only in games
+        if (!player.gma.isInGame)
             return
 
         event.isCancelled = true

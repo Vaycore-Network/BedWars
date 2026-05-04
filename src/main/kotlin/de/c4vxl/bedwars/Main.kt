@@ -42,7 +42,7 @@ class Main : JavaPlugin() {
                 )
 
                 // Register team labels
-                Language.get(langName)?.child("bedwars")?.let {
+                Language.get(langName).child("bedwars").let {
                     Team.registerLabelTranslation(langName, buildMap {
                         for (i in 0..9)
                             put(i, it.get("team.$i.label"))
