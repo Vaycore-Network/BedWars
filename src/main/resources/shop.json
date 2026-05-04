@@ -47,6 +47,7 @@
     "21": { "materialName": "GOLDEN_APPLE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 5 },
     "22": { "materialName": "WATER_BUCKET", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
     "23": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
-    "24": { "materialName": "ENDER_PEARL", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 }
+    "24": { "materialName": "ENDER_PEARL", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 3 },
+    "25": { "materialName": "custom:warp_pearl", "amount": 1, "currencyName": "GOLD_INGOT", "cost": 4 }
   }
 }

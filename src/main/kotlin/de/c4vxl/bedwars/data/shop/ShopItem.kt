@@ -6,6 +6,7 @@ import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
 import de.c4vxl.bedwars.item.Booster
 import de.c4vxl.bedwars.item.LastChance
+import de.c4vxl.bedwars.item.WarpPearl
 import de.c4vxl.gamemanager.gma.player.GMAPlayer
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.utils.ItemBuilder
@@ -75,6 +76,7 @@ data class ShopItem(
             return when (materialName.lowercase().removePrefix("custom:")) {
                 "booster"     -> Booster.item(lang)
                 "last_chance" -> LastChance.item(lang)
+                "warp_pearl"  -> WarpPearl.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }

@@ -6,7 +6,6 @@ import de.c4vxl.gamemanager.utils.ItemBuilder
 import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.event.player.PlayerInteractEvent
-import org.bukkit.util.Vector
 
 /**
  * A custom booster item
@@ -16,8 +15,7 @@ object Booster {
     fun item(language: Language) =
         ItemBuilder(
             Material.FLINT_AND_STEEL,
-            language.getCmp("item.custom.booster.name"),
-            lore = listOf(language.getCmp("item.custom.booster.desc"))
+            lore = listOf(language.getCmp("item.custom.booster.desc.1"), language.getCmp("item.custom.booster.desc.2"))
         )
             .onEvent(PlayerInteractEvent::class.java) { event ->
                 if (!event.action.isRightClick)

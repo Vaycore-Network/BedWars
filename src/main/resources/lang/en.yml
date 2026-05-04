@@ -62,9 +62,16 @@
 "item.potion.invisibility.2": "<gold>Invisibility <gray>- Level 2</gray></gold>"
 
 "item.custom.booster.name": "<gold>Booster <gray>| Right click</gray></gold>"
-"item.custom.booster.desc": "<gray>Right clicking this item allows you to boost yourself into the air!</gray>"
+"item.custom.booster.desc.1": "<gray>Right clicking this item allows<gray>"
+"item.custom.booster.desc.2": "<gray>you to boost yourself into the air!</gray>"
 "item.custom.last_chance.name": "<gold>Last Chance <gray>| Right click</gray></gold>"
-"item.custom.last_chance.desc": "<gray>Places a safe plattform underneath you to save your fall.</gray>"
+"item.custom.last_chance.desc.1": "<gray>Places a safe plattform underneath</gray>"
+"item.custom.last_chance.desc.2": "<gray>you to save your fall.</gray>"
+"item.custom.warp_pearl.name": "<gold>Warp Pearl</gold>"
+"item.custom.warp_pearl.desc.1": "<gray>Five seconds after throwing this pearl you</gray>"
+"item.custom.warp_pearl.desc.2": "<gray>will be teleported to your initial position</gray>"
+
+"game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"
 
 "game.shop.name": "<red>Shop</red>"
 "game.shop.buy.fail": "${prefix} <red>Sorry!</red> But you don't have enough currency to buy this item!"
