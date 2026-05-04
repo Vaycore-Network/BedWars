@@ -3,7 +3,7 @@
 "team.0.label": "<red>Red</red>"
 "team.1.label": "<blue>Blue</blue>"
 "team.2.label": "<aqua>Aqua</aqua>"
-"team.3.label": "<purple>Purple</purple>"
+"team.3.label": "<dark_purple>Purple</dark_purple>"
 "team.4.label": "<yellow>Yellow</yellow>"
 "team.5.label": "<green>Green</green>"
 "team.6.label": "<gold>Orange</gold>"
@@ -35,6 +35,8 @@
 "item.material.brick.name": "<gray>Brick</gray>"
 "spawner.type.brick.name": "<gold><b>Brick Spawner</b></gold>"
 "spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"
+"spawner.type.gold.name": "<gold><b>Gold Spawner</b></gold>"
+"spawner.type.diamond.name": "<gold><b>Diamond Spawner</b></gold>"
 "spawner.type.emerald.name": "<gold><b>Emerald Spawner</b></gold>"
 "spawner.display.name": "<gray>Next drop in <white>$0</white> seconds</gray>"
 
