@@ -27,17 +27,28 @@ class MapHandler : Listener {
         Bukkit.getPluginManager().registerEvents(this, Main.instance)
     }
 
-    /**
-     * Holds a list of all blocks placed by a player
-     */
-    private val Game.blocksPlaced: MutableList<Block> get() =
-        this.gameData["blocksPlaced"] ?: mutableListOf()
+    companion object {
+        /**
+         * Holds a list of all blocks placed by a player
+         */
+        private val Game.blocksPlaced: MutableList<Block> get() =
+            this.gameData["blocksPlaced"] ?: mutableListOf()
 
-    /**
-     * Tries to find the game a world belongs to
-     */
-    private val World.game: Game? get() =
-        GMA.registeredGames.find { this.name.endsWith(it.id.asString) }
+        /**
+         * Tries to find the game a world belongs to
+         */
+        private val World.game: Game? get() =
+            GMA.registeredGames.find { this.name.endsWith(it.id.asString) }
+
+        /**
+         * Adds a block to the tracked blocks of a game
+         * @param game The game
+         * @param block The block
+         */
+        fun track(game: Game, block: Block) {
+            game.gameData["blocksPlaced"] = game.blocksPlaced.apply { add(block) }
+        }
+    }
 
     @EventHandler
     fun onBlockPlace(event: BlockPlaceEvent) {
@@ -48,7 +59,7 @@ class MapHandler : Listener {
         event.isCancelled = false
 
         // Add block
-        game.gameData["blocksPlaced"] = game.blocksPlaced.apply { add(event.blockPlaced) }
+        track(game, event.blockPlaced)
     }
 
     @EventHandler
