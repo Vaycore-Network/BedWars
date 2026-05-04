@@ -72,6 +72,8 @@
 "item.custom.warp_pearl.desc.2": "<gray>will be teleported to your initial position</gray>"
 "item.custom.portable_shop.name": "<gold>Portable Shop</gold>"
 "item.custom.portable_shop.desc.1": "<gray>Open a shop from anywhere</gray>"
+"item.custom.fireball.name": "<gold>Fireball <gray>| Right click</gray></gold>"
+"item.custom.fireball.desc.1": "<gray>A throwable explosive</gray>"
 
 "game.warp_pearl.notice": "<gray>You will be teleported back in <white>5</white> seconds</gray>"
 

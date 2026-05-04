@@ -4,10 +4,7 @@ import de.c4vxl.bedwars.Main
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
-import de.c4vxl.bedwars.item.Booster
-import de.c4vxl.bedwars.item.LastChance
-import de.c4vxl.bedwars.item.PortableShop
-import de.c4vxl.bedwars.item.WarpPearl
+import de.c4vxl.bedwars.item.*
 import de.c4vxl.gamemanager.gma.player.GMAPlayer
 import de.c4vxl.gamemanager.gma.team.Team
 import de.c4vxl.gamemanager.utils.ItemBuilder
@@ -79,6 +76,7 @@ data class ShopItem(
                 "last_chance"   -> LastChance.item(lang)
                 "warp_pearl"    -> WarpPearl.item(lang)
                 "portable_shop" -> PortableShop.item(lang)
+                "fireball"      -> Fireball.item(lang)
                 else -> error("Invalid custom item '${materialName}'")
             }
         }
