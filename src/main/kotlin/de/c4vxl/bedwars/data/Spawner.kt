@@ -54,7 +54,7 @@ data class Spawner(
         if (!displayDelay)
             return null
 
-        val loc = location.clone().add(0.0, 2.5, 0.0)
+        val loc = location.clone().add(0.0, 2.1, 0.0)
 
         // Send spawner display item
         displayItem?.let {
@@ -67,7 +67,7 @@ data class Spawner(
         // Send spawner name
         displayName?.let {
             player.setHologramText(
-                player.createHologram(loc.clone().add(0.0, 1.35, 0.0)) ?: return@let,
+                player.createHologram(loc.clone().add(0.0, 1.45, 0.0)) ?: return@let,
                 player.language.child("bedwars").getCmp(it)
             )
         }
