@@ -93,6 +93,8 @@
 "item.custom.freezer.desc.1": "<gray>Stoppt Spieler für 5 Sekunden</gray>"
 "item.custom.tracker.name": "<gold>Spieler-Tracker <gray>| Rechtsklick</gray></gold>"
 "item.custom.tracker.desc.1": "<gray>Wähle einen Spieler, den du verfolgen möchtest</gray>"
+"item.custom.instant_wall.name": "<gold>Sofortwand</gold>"
+"item.custom.instant_wall.desc.1": "<gray>Erstellt automatisch eine 5x4 Wand für dich</gray>"
 
 "game.frozen.notice": "<gray>Du wurdest <aqua>eingefroren</aqua> und kannst dich für <white>$0</white> Sekunden nicht bewegen!</gray>"
 "game.base_tp.cancelled": "${prefix} <red>Dein Basis-Teleport wurde abgebrochen!</red>"

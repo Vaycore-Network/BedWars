@@ -11,7 +11,8 @@
     "29": { "materialName": "PACKED_ICE", "amount": 4, "currencyName": "IRON_INGOT", "cost": 1 },
     "30": { "materialName": "SPONGE", "amount": 1, "currencyName": "IRON_INGOT", "cost": 3 },
     "32": { "materialName": "custom:instant_bridge", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 },
-    "33": { "materialName": "custom:instant_stairs", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 }
+    "33": { "materialName": "custom:instant_stairs", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 },
+    "34": { "materialName": "custom:instant_wall", "amount": 1, "currencyName": "IRON_INGOT", "cost": 4 }
   },
 
   "WEAPONS": {

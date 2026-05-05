@@ -81,6 +81,7 @@ data class ShopItem(
                 "team_chest"     -> TeamChest.item(lang)
                 "instant_bridge" -> InstantBridge.item(lang)
                 "instant_stairs" -> InstantStairs.item(lang)
+                "instant_wall"   -> InstantWall.item(lang)
                 "base_tp"        -> BaseTp.item(lang)
                 "freezer"        -> Freezer.item(lang)
                 "tracker"        -> PlayerTracker.item(lang)

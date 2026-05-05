@@ -93,6 +93,8 @@
 "item.custom.freezer.desc.1": "<gray>Stops players from moving for 5 seconds</gray>"
 "item.custom.tracker.name": "<gold>Player Tracker <gray>| Right click</gray></gold>"
 "item.custom.tracker.desc.1": "<gray>Choose a player to track for the rest of the game</gray>"
+"item.custom.instant_wall.name": "<gold>Instant wall</gold>"
+"item.custom.instant_wall.desc.1": "<gray>Place this anywhere to construct a 5x4 wall</gray>"
 
 "game.frozen.notice": "<gray>You have been <aqua>frozen</aqua> and cannot move for <white>$0</white> seconds!</gray>"
 "game.base_tp.cancelled": "${prefix} <red>Your base teleport has been cancelled!</red>"
