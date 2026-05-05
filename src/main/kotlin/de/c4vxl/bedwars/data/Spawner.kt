@@ -11,6 +11,7 @@ import net.minecraft.world.entity.decoration.ArmorStand
 import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.World
+import org.bukkit.entity.Item
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.util.Vector
@@ -22,6 +23,7 @@ data class Spawner(
     val location: Location,
     val material: Material,
     val interval: Int,
+    val maximum: Int,
     val displayDelay: Boolean,
     val displayName: String?,
     val displayItem: Material?
@@ -39,6 +41,12 @@ data class Spawner(
      * @param world The world
      */
     fun drop(world: World) {
+        val nearby = location.getNearbyEntitiesByType(Item::class.java, 3.0)
+            .sumOf { it.itemStack.amount }
+
+        if (nearby >= maximum)
+            return
+
         // Spawn item
         world.dropItem(location, item)
 

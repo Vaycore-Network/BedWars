@@ -74,7 +74,8 @@ class SpawnerHandler : Listener {
                 Location(world, x + 0.5, y + 0.5, z + 0.5),
                 config.getString("$key.material")?.let { Material.getMaterial(it) } ?: return@mapNotNull null,
                 config.getInt("$key.interval"),
-                config.getBoolean("$key.display.enabled"),
+                config.getInt("$key.maximum", 64),
+                config.getBoolean("$key.display.enabled", false),
                 config.getString("$key.display.name"),
                 config.getString("$key.display.material")?.let { Material.getMaterial(it) }
             )
