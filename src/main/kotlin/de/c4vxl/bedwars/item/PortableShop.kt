@@ -15,7 +15,7 @@ object PortableShop {
 
     fun item(language: Language) =
         ItemBuilder(
-            Material.TRAPPED_CHEST,
+            Material.EMERALD_BLOCK,
             language.getCmp("item.custom.portable_shop.name"),
             lore = listOf(language.getCmp("item.custom.portable_shop.desc.1")),
             key = "bw_portable_shop"
