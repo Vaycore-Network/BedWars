@@ -37,6 +37,9 @@ class ShopHandler : Listener {
 
                 shops.forEach { (player, playerShops) ->
                     playerShops.forEach { (loc, npc) ->
+                        if (loc.world != player.location.world)
+                            return@forEach
+
                         if (loc.distance(player.location) <= 15)
                             player.sendNPCRotation(npc, NPCUtils.calculateYaw(player.location, loc))
                     }
