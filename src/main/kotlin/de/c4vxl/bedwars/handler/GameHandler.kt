@@ -15,11 +15,13 @@ import org.bukkit.entity.Snowball
 import org.bukkit.entity.Snowman
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
 import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.entity.FoodLevelChangeEvent
 import org.bukkit.event.entity.ProjectileHitEvent
 import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
+import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.persistence.PersistentDataType
 import java.util.concurrent.TimeUnit
@@ -138,6 +140,22 @@ class GameHandler : Listener {
         event.player.sendActionBar(event.player.language.child("bedwars").getCmp("game.frozen.notice", secondsRemaining.toString()))
 
         // Stop movement
+        event.isCancelled = true
+    }
+
+    @EventHandler
+    fun onInteract(event: PlayerInteractEvent) {
+        val game = event.player.gma.game ?: return
+
+        if (event.action != Action.RIGHT_CLICK_BLOCK)
+            return
+        
+        if (event.clickedBlock == null)
+            return
+
+        if (event.isBlockInHand)
+            return
+
         event.isCancelled = true
     }
 }
