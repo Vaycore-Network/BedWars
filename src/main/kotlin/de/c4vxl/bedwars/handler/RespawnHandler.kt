@@ -34,6 +34,7 @@ class RespawnHandler : Listener {
          * Returns {@code true} if the team can still respawn
          */
         val Team.canRespawn: Boolean get() =
+            this.players.isNotEmpty() &&
             this.manager.game.gameData.get<Boolean>("destroyed.${this.id}") != true
     }
 

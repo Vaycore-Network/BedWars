@@ -61,7 +61,7 @@ class ScoreboardHandler : Listener {
 
                 language.getCmp(
                     "game.scoreboard.team.${
-                        if (team.canRespawn) "bed"
+                        if (playersAlive >= 1 && team.canRespawn) "bed"
                         else if (playersAlive >= 1) "remaining"
                         else "dead"
                     }",
