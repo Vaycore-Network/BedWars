@@ -11,6 +11,7 @@ import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.entity.Player
 import org.bukkit.event.player.PlayerInteractEvent
+import org.bukkit.inventory.ItemStack
 import org.bukkit.scheduler.BukkitRunnable
 
 /**
@@ -43,7 +44,7 @@ object BaseTp {
                         // Teleport
                         val team = event.player.gma.team ?: return@onEvent
                         val spawn = team.manager.game.worldManager.map?.getSpawnLocation(team.id) ?: return@onEvent
-                        teleport(event.player, spawn, 5)
+                        teleport(event.player, spawn, 5, event.item?.clone())
 
                         event.item!!.amount -= 1
                         event.isCancelled = true
@@ -58,7 +59,7 @@ object BaseTp {
      * @param location The location to teleport the player to
      * @param seconds The amount of seconds the teleport should take
      */
-    private fun teleport(player: Player, location: Location, seconds: Int) {
+    private fun teleport(player: Player, location: Location, seconds: Int, item: ItemStack? = null) {
         val initialLocation = player.location.clone()
         val lang = player.language.child("bedwars")
 
@@ -71,6 +72,7 @@ object BaseTp {
                     initialLocation.blockY != player.location.blockY ||
                     initialLocation.blockZ != player.location.blockZ) {
                     player.playSound(player.location, Sound.ENTITY_ITEM_BREAK, 2f, 1f)
+                    item?.let { player.inventory.addItem(it) }
                     player.sendMessage(lang.getCmp("game.base_tp.cancelled"))
                     cancel()
                     return
