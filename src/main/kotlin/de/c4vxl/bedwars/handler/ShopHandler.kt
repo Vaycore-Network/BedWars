@@ -104,7 +104,7 @@ class ShopHandler : Listener {
         val config = event.map.getMetadata("bedwars.shops") ?: return
         event.game.gameData["shops"] = config.getKeys(false).map { key ->
             val (x, y, z) = config.getIntegerList(key)
-            Location(world, x + 0.5, y + 0.5, z + 0.5)
+            Location(world, x + 0.5, y.toDouble(), z + 0.5)
         }
     }
 }
