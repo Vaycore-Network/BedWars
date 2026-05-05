@@ -7,6 +7,7 @@ import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language.Companion.language
 import org.bukkit.Bukkit
 import org.bukkit.GameMode
+import org.bukkit.Material
 import org.bukkit.World
 import org.bukkit.block.Block
 import org.bukkit.event.EventHandler
@@ -101,7 +102,7 @@ class MapHandler : Listener {
 
         // Let player destroy non-solid blocks
         // Stuff like grass or flowers
-        if (!event.block.type.isSolid) {
+        if (!event.block.type.isSolid && listOf("_CARPET", "STRING").none { event.block.type.name.contains(it) }) {
             event.isDropItems = false
             return
         }
