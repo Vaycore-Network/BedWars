@@ -89,15 +89,20 @@ data class ShopItem(
         }
 
         val material = getMaterial(materialName, player.team)
+        val name = key?.let { player.language.child("bedwars").getCmp(it) }
+            ?: Component.translatable(material.translationKey()).color(NamedTextColor.GRAY).decorate(TextDecoration.BOLD)
+
         return ItemBuilder(material, unbreakable = true)
             .let { key?.let { k -> it.translatable(k) } ?: it }
             .editMeta { meta ->
                 // Add potion effect
-                potionEffect?.let { (meta as? PotionMeta)?.addCustomEffect(it, true) }
+                potionEffect?.let {
+                    (meta as? PotionMeta)?.addCustomEffect(it, true)
+                    meta.displayName(name)
+                }
 
                 // Set display name
-                meta.itemName(key?.let { player.language.child("bedwars").getCmp(it) }
-                    ?: Component.translatable(material.translationKey()).color(NamedTextColor.GRAY).decorate(TextDecoration.BOLD))
+                meta.itemName(name)
             }
     }
 }
