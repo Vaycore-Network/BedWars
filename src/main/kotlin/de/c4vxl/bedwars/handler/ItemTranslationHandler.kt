@@ -45,6 +45,8 @@ class ItemTranslationHandler : Listener {
 
             // Update item display name
             val meta = item.takeIf { it.hasItemMeta() }?.itemMeta ?: return item
+            if (meta.hasDisplayName())
+                meta.displayName(translation)
             meta.itemName(translation)
             item.setItemMeta(meta)
 
