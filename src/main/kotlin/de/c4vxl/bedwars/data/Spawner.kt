@@ -42,7 +42,12 @@ data class Spawner(
      */
     fun drop(world: World) {
         val nearby = location.getNearbyEntitiesByType(Item::class.java, 3.0)
-            .sumOf { it.itemStack.amount }
+            .sumOf {
+                it.itemStack
+                    .takeIf { i -> i.type == material }
+                    ?.amount
+                    ?: 0
+            }
 
         if (nearby >= maximum)
             return
