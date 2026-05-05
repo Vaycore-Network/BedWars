@@ -27,7 +27,7 @@ object InventoryUtils {
             if (item.type != material) continue
 
             when {
-                item.amount <= remaining -> {
+                item.amount < remaining -> {
                     remaining -= item.amount
                     contents[i] = null
                 }
