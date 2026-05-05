@@ -3,6 +3,7 @@ package de.c4vxl.bedwars.item
 import de.c4vxl.bedwars.handler.ItemTranslationHandler.Companion.translatable
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language
+import de.c4vxl.gamemanager.language.Language.Companion.language
 import de.c4vxl.gamemanager.utils.ItemBuilder
 import org.bukkit.Bukkit
 import org.bukkit.Material
@@ -31,6 +32,12 @@ object TeamChest {
                     onEvent(PlayerInteractEvent::class.java) { event ->
                         if (!event.action.isRightClick)
                             return@onEvent
+
+                        // Don't allow while falling
+                        if (!event.player.isOnGround) {
+                            event.player.sendMessage(event.player.language.child("bedwars").getCmp("game.team_chest.fail"))
+                            return@onEvent
+                        }
 
                         val team = event.player.gma.team ?: return@onEvent
                         val game = team.manager.game
