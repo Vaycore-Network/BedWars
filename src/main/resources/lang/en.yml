@@ -34,7 +34,7 @@
 "item.material.iron_ingot.name": "<gray><b>Iron</b></gray>"
 "item.material.brick.name": "<gray><b>Brick</b></gray>"
 "item.material.diamond.name": "<gray><b>Diamond</b></gray>"
-"item.material.gold.name": "<gray><b>Gold</b></gray>"
+"item.material.gold_ingot.name": "<gray><b>Gold</b></gray>"
 "item.material.emerald.name": "<gray><b>Emerald</b></gray>"
 "spawner.type.brick.name": "<gold><b>Brick Spawner</b></gold>"
 "spawner.type.iron.name": "<gold><b>Iron Spawner</b></gold>"

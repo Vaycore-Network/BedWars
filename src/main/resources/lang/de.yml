@@ -34,7 +34,7 @@
 "item.material.iron_ingot.name": "<gray><b>Eisen</b></gray>"
 "item.material.brick.name": "<gray><b>Ziegel</b></gray>"
 "item.material.diamond.name": "<gray><b>Diamant</b></gray>"
-"item.material.gold.name": "<gray><b>Gold</b></gray>"
+"item.material.gold_ingot.name": "<gray><b>Gold</b></gray>"
 "item.material.emerald.name": "<gray><b>Smaragd</b></gray>"
 "spawner.type.brick.name": "<gold><b>Ziegel-Generator</b></gold>"
 "spawner.type.iron.name": "<gold><b>Eisen-Generator</b></gold>"
