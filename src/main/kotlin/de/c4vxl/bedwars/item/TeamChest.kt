@@ -33,8 +33,10 @@ object TeamChest {
                         if (!event.action.isRightClick)
                             return@onEvent
 
+                        event.isCancelled = true
+
                         // Don't allow while falling
-                        if (!event.player.isOnGround) {
+                        if (!event.player.isOnGround && event.player.location.subtract(0.0, 2.0, 0.0).block.type == Material.AIR) {
                             event.player.sendMessage(event.player.language.child("bedwars").getCmp("game.team_chest.fail"))
                             return@onEvent
                         }
@@ -50,8 +52,6 @@ object TeamChest {
                         // Open chest
                         event.player.openInventory(inventory)
                         event.player.playSound(event.player.location, Sound.BLOCK_CHEST_OPEN, 2f, 1f)
-
-                        event.isCancelled = true
                     }
 
                 eventsInitialized = true
