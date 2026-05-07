@@ -10,7 +10,6 @@ import de.c4vxl.gamemanager.utils.ItemBuilder
 import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.entity.Player
-import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.ItemStack
 
@@ -39,6 +38,10 @@ object LastChance {
 
                         placePlattform(event.player, event.item!!)
                         event.item!!.amount -= 1
+
+                        // Lower fall distance
+                        try { event.player.fallDistance /= 3 }
+                        catch (_: Exception) {}
                     }
 
                 eventsInitialized = true
