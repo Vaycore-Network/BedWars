@@ -91,7 +91,6 @@ data class ShopItem(
 
         val material = getMaterial(materialName, player.team)
         val name = key?.let { player.language.child("bedwars").getCmp(it) }
-            ?: Component.translatable(material.translationKey()).color(NamedTextColor.GRAY).decorate(TextDecoration.BOLD)
 
         return ItemBuilder(material, unbreakable = true)
             .let { key?.let { k -> it.translatable(k) } ?: it }

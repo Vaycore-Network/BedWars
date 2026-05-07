@@ -11,6 +11,8 @@ import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.language.Language.Companion.language
 import de.c4vxl.gamemanager.utils.ItemBuilder
 import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.format.NamedTextColor
+import net.kyori.adventure.text.format.TextDecoration
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.Sound
@@ -80,6 +82,11 @@ class ShopUI(
                                 add(language.getCmp("ui.shop.buyable.lore.2"))
                                 add(language.getCmp("ui.shop.buyable.lore.3"))
                             }
+
+                            editMeta { meta ->
+                                meta.itemName(name ?: Component.translatable(material.translationKey()).color(NamedTextColor.GRAY).decorate(TextDecoration.BOLD))
+                            }
+
                             key = UUID.randomUUID().toString()
                         }
                         .onEvent(InventoryClickEvent::class.java) { event ->
