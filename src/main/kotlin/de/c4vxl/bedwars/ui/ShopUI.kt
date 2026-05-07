@@ -147,7 +147,7 @@ class ShopUI(
                             player.inventory.removeMaterial(it.value.currency, it.value.cost * buyAmount)
 
                             // Play sound
-                            player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 2f, 2f)
+                            player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1f, 2f)
                         }
                         .build())
                 } catch (e: Exception) {
