@@ -90,11 +90,11 @@ class UpgradesHandler {
 
         // Base heal potion effect
         if (upgrades.contains(Upgrade.BASE_HEAL) && isOwnTeam)
-            player.addPotionEffect(PotionEffect(PotionEffectType.REGENERATION, 20 * 3, 2, true, false))
+            player.addPotionEffect(PotionEffect(PotionEffectType.REGENERATION, 20 * 3, 1, true, false))
 
         // Blindness trap
         if (upgrades.contains(Upgrade.BLINDNESS_TRAP) && !isOwnTeam) {
-            player.addPotionEffect(PotionEffect(PotionEffectType.BLINDNESS, 20 * 30, 1, true, false))
+            player.addPotionEffect(PotionEffect(PotionEffectType.BLINDNESS, 20 * 10, 2, true, false))
             team.upgrades = upgrades.apply { remove(Upgrade.BLINDNESS_TRAP) }
             announceTrap(team)
         }
@@ -109,7 +109,7 @@ class UpgradesHandler {
 
         // Mining trap
         if (upgrades.contains(Upgrade.MINING_TRAP) && !isOwnTeam) {
-            player.addPotionEffect(PotionEffect(PotionEffectType.MINING_FATIGUE, 20 * 30, 2, true, false))
+            player.addPotionEffect(PotionEffect(PotionEffectType.MINING_FATIGUE, 20 * 30, 1, true, false))
             team.upgrades = upgrades.apply { remove(Upgrade.MINING_TRAP) }
             announceTrap(team)
         }
