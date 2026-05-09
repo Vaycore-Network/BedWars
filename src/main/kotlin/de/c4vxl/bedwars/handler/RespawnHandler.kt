@@ -53,7 +53,7 @@ class RespawnHandler : Listener {
             event.player.equipTeamArmor()
 
         // Equip sword
-        event.player.bukkitPlayer.inventory.setItem(0, ItemBuilder(Material.WOODEN_SWORD).build())
+        event.player.bukkitPlayer.inventory.setItem(0, ItemBuilder(Material.WOODEN_SWORD, unbreakable = true).build())
 
         // Apply upgrades
         UpgradesHandler.upgradeItem(event.player.bukkitPlayer, event.player.bukkitPlayer.inventory.chestplate!!)
