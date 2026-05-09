@@ -23,10 +23,13 @@ import java.util.*
 import kotlin.math.floor
 import kotlin.math.min
 
+/**
+ * UI for the shop
+ */
 class ShopUI(
     val player: Player,
-    private val language: Language = player.language.child("bedwars"),
-    private val team: Team = player.gma.team!!
+    val language: Language = player.language.child("bedwars"),
+    internal val team: Team = player.gma.team!!
 ) {
     enum class Page {
         BLOCKS,
@@ -39,7 +42,7 @@ class ShopUI(
     private var marginItem = ItemBuilder(Material.GRAY_STAINED_GLASS_PANE, Component.empty())
         .onEvent(InventoryClickEvent::class.java) { it.isCancelled = true }.build()
 
-    private val baseInventory get() = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
+    val baseInventory get() = Bukkit.createInventory(null, 5 * 9, language.getCmp("ui.shop.title"))
         .apply {
             // Add margin items
             for (i in 0..44)
@@ -62,6 +65,10 @@ class ShopUI(
                     }
                     .build())
             }
+
+            setItem(8, ItemBuilder(Material.ENCHANTING_TABLE, language.getCmp("ui.shop.tab.upgrades"))
+                .onEvent(InventoryClickEvent::class.java) { UpgradesUI(this@ShopUI).open() }
+                .build())
         }
 
     fun open(page: Page = Page.BLOCKS) {

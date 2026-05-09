@@ -77,4 +77,11 @@ object TeamData {
         config.getString("blocks.${this.id}.${variant.name.lowercase()}")
             ?.let { Material.getMaterial(it) }
             ?: run { throw RuntimeException("Couldn't find block variant '${variant.name}' for Team '${this.id}'") }
+
+    /**
+     * Holds the upgrades of a team
+     */
+    var Team.upgrades: MutableList<Upgrade>
+        get() = this.manager.game.gameData["upgrades.${this.id}"] ?: mutableListOf()
+        set(value) { this.manager.game.gameData["upgrades.${this.id}"] = value }
 }
