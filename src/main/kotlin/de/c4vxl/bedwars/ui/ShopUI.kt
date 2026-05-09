@@ -2,7 +2,9 @@ package de.c4vxl.bedwars.ui
 
 import de.c4vxl.bedwars.data.TeamData
 import de.c4vxl.bedwars.data.TeamData.getBlockVariant
+import de.c4vxl.bedwars.data.Upgrade
 import de.c4vxl.bedwars.data.shop.ShopData
+import de.c4vxl.bedwars.handler.UpgradesHandler
 import de.c4vxl.bedwars.utils.InventoryUtils.countMaterial
 import de.c4vxl.bedwars.utils.InventoryUtils.removeMaterial
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
@@ -148,6 +150,9 @@ class ShopUI(
                             if (item.type.name.endsWith("_SWORD")) {
                                 player.inventory.remove(Material.WOODEN_SWORD)
                             }
+
+                            // Upgrades
+                            UpgradesHandler.upgradeItem(player, item)
 
                             // Give item
                             if (slot != -1) {

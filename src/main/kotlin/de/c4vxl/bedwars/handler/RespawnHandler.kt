@@ -53,6 +53,10 @@ class RespawnHandler : Listener {
 
         // Equip sword
         event.player.bukkitPlayer.inventory.setItem(0, ItemBuilder(Material.WOODEN_SWORD).build())
+
+        // Apply upgrades
+        UpgradesHandler.upgradeItem(event.player.bukkitPlayer, event.player.bukkitPlayer.inventory.chestplate!!)
+        UpgradesHandler.upgradeItem(event.player.bukkitPlayer, event.player.bukkitPlayer.inventory.getItem(0)!!)
     }
 
     @EventHandler

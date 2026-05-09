@@ -6,6 +6,7 @@ import de.c4vxl.gamemanager.language.Language
 import de.c4vxl.gamemanager.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
+import org.apache.logging.log4j.util.Base64Util
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Logger
 
@@ -63,6 +64,7 @@ class Main : JavaPlugin() {
         ScoreboardHandler()
         ShopHandler()
         ItemHandler()
+        UpgradesHandler()
 
         logger.info("[+] $name has been enabled!")
     }
