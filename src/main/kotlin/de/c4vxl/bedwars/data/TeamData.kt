@@ -45,7 +45,8 @@ object TeamData {
 
         return ItemBuilder(
             material,
-            player.language.child("bedwars").getCmp("item.armor.leather.name")
+            player.language.child("bedwars").getCmp("item.armor.leather.name"),
+            unbreakable = true
         )
             .editMeta { meta -> (meta as LeatherArmorMeta).setColor(this.color) }
             .build()
