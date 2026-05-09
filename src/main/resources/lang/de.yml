@@ -106,7 +106,7 @@
 "game.shop.buy.fail": "${prefix} <red>Sorry!</red> Du hast nicht genug Ressourcen, um diesen Gegenstand zu kaufen!"
 "game.shop.armor.buy.fail": "${prefix} <gray>Du hast bereits eine bessere Rüstung!</gray>"
 "game.team_chest.fail": "${prefix} <red>Du kannst die Teamtruhe nicht öffnen, während du fällst!</red>"
-"game.upgrade.bought": "${prefix} <gray><white>$0</white> hat das <white>$1</white> gekauft!</gray>"
+"game.upgrade.bought": "${prefix} <gray><white>$0</white> hat '<white>$1</white>' gekauft!</gray>"
 "game.upgrade.buy.fail.already": "${prefix} <red>Dein Team hat dieses Upgrade bereits gekauft!</red>"
 "game.trap.triggered.title": "<red>Deine Falle wurde ausgelöst!</red>"
 

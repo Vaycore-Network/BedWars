@@ -15,6 +15,8 @@ import org.bukkit.enchantments.Enchantment
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.LightningStrike
 import org.bukkit.entity.Player
+import org.bukkit.event.EventHandler
+import org.bukkit.event.inventory.InventoryEvent
 import org.bukkit.inventory.ItemStack
 import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
@@ -79,6 +81,20 @@ class UpgradesHandler {
         team.players.forEach {
             it.bukkitPlayer.sendTitlePart(TitlePart.TITLE, it.language.child("bedwars").getCmp("game.trap.triggered.title"))
             it.bukkitPlayer.playSound(it.bukkitPlayer.location, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1.5f, 0.5f)
+        }
+    }
+
+    @EventHandler
+    fun onInv(event: InventoryEvent) {
+        event.viewers.forEach { viewer ->
+            val player = viewer as? Player ?: return@forEach
+            // Check for game
+            player.gma.game.takeIf { it?.isRunning == true } ?: return
+
+            // Upgrade all items
+            player.inventory.contents
+                .filterNotNull()
+                .forEach { upgradeItem(player, it) }
         }
     }
 
