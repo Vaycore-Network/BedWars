@@ -77,7 +77,7 @@ class UpgradesHandler {
     private fun announceTrap(team: Team) {
         // Announce
         team.players.forEach {
-            it.bukkitPlayer.sendTitlePart(TitlePart.TITLE, it.language.getCmp("game.trap.triggered.title"))
+            it.bukkitPlayer.sendTitlePart(TitlePart.TITLE, it.language.child("bedwars").getCmp("game.trap.triggered.title"))
             it.bukkitPlayer.playSound(it.bukkitPlayer.location, Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1.5f, 0.5f)
         }
     }
