@@ -16,6 +16,7 @@ import org.bukkit.entity.EntityType
 import org.bukkit.entity.LightningStrike
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
+import org.bukkit.event.Listener
 import org.bukkit.event.inventory.InventoryEvent
 import org.bukkit.inventory.ItemStack
 import org.bukkit.potion.PotionEffect
@@ -24,11 +25,13 @@ import org.bukkit.potion.PotionEffectType
 /**
  * Handles item and base upgrades
  */
-class UpgradesHandler {
+class UpgradesHandler : Listener {
     init {
         Bukkit.getScheduler().runTaskTimer(Main.instance, Runnable {
             Bukkit.getOnlinePlayers().forEach { handleBaseUpgrades(it) }
         }, 40, 40)
+
+        Bukkit.getPluginManager().registerEvents(this, Main.instance)
     }
 
     companion object {
@@ -117,7 +120,8 @@ class UpgradesHandler {
 
         // Lightning trap
         if (upgrades.contains(Upgrade.LIGHTNING_TRAP) && !isOwnTeam) {
-            (player.world.spawnEntity(player.location.add(0.0, 3.0, 0.0), EntityType.LIGHTNING_BOLT) as LightningStrike)
+            player.world.strikeLightningEffect(player.location)
+            player.damage(9.0)
 
             team.upgrades = upgrades.apply { remove(Upgrade.LIGHTNING_TRAP) }
             announceTrap(team)
