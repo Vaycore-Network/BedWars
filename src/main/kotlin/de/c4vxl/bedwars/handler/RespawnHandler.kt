@@ -44,6 +44,7 @@ class RespawnHandler : Listener {
 
         // Reset player
         event.player.reset()
+        event.player.bukkitPlayer.saturation = 10F
 
         // Equip armor
         if (event.reason == GamePlayerEquipEvent.Reason.RESPAWN)

@@ -96,8 +96,6 @@ class UpgradesUI(
             }
         }
 
-        println("dsf")
-
         // Open page
         player.openInventory(inv)
 

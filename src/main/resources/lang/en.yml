@@ -108,6 +108,7 @@
 "game.team_chest.fail": "${prefix} <red>You cannot open the team chest while falling!</red>"
 "game.upgrade.bought": "${prefix} <gray><white>$0</white> has bought the <white>$1</white></gray>"
 "game.upgrade.buy.fail.already": "${prefix} <red>Your team has already bought this upgrade!</red>"
+"game.trap.triggered.title": "<red>Your trap has been triggered!</red>"
 
 "ui.shop.title": "<red>Shop</red>"
 "ui.shop.tab.blocks": "<gold><b>Blocks</b></gold>"
@@ -115,7 +116,7 @@
 "ui.shop.tab.armor": "<gold><b>Armor</b></gold>"
 "ui.shop.tab.consumables": "<gold><b>Potions</b></gold>"
 "ui.shop.tab.special": "<gold><b>Special</b></gold>"
-"ui.shop.tab.upgrades": "<gold><b>Upgrades</b></gold>"
+"ui.shop.tab.upgrades": "<gold><b>Upgrades & Traps</b></gold>"
 "ui.scrollable.previous": "<gray>Previous Page</gray>"
 "ui.scrollable.next": "<gray>Next Page</gray>"
 "ui.player_tracker.title": "<red>Track a player</red>"

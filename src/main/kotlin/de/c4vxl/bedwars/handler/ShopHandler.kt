@@ -54,12 +54,12 @@ class ShopHandler : Listener {
      */
     private fun renderShops(player: Player) {
         val game = player.gma.game ?: return
-        val shops: List<Location> = game.gameData["shops"] ?: return
+        val shops: Map<Int, Location> = game.gameData["shops"] ?: return
         val lang = player.language.child("bedwars")
 
         val shopEntities: MutableMap<Player, List<Pair<Location, Int>>> = game.gameData["shopEntities"] ?: mutableMapOf()
 
-        shopEntities[player] = shops.map {
+        shopEntities[player] = shops.values.map {
             it to player.renderNPC(it, player.skin, lang.getCmp("game.shop.name"))
         }
 
@@ -105,9 +105,9 @@ class ShopHandler : Listener {
 
         // Load shop locations
         val config = event.map.getMetadata("bedwars.shops") ?: return
-        event.game.gameData["shops"] = config.getKeys(false).map { key ->
+        event.game.gameData["shops"] = config.getKeys(false).associate { key ->
             val (x, y, z) = config.getIntegerList(key)
-            Location(world, x + 0.5, y.toDouble(), z + 0.5)
+            key.toIntOrNull() to Location(world, x + 0.5, y.toDouble(), z + 0.5)
         }
     }
 }

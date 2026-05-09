@@ -108,6 +108,7 @@
 "game.team_chest.fail": "${prefix} <red>Du kannst die Teamtruhe nicht öffnen, während du fällst!</red>"
 "game.upgrade.bought": "${prefix} <gray><white>$0</white> hat das <white>$1</white> gekauft!</gray>"
 "game.upgrade.buy.fail.already": "${prefix} <red>Dein Team hat dieses Upgrade bereits gekauft!</red>"
+"game.trap.triggered.title": "<red>Deine Falle wurde ausgelöst!</red>"
 
 "ui.shop.title": "<red>Shop</red>"
 "ui.shop.tab.blocks": "<gold><b>Blöcke</b></gold>"
@@ -115,7 +116,7 @@
 "ui.shop.tab.armor": "<gold><b>Rüstung</b></gold>"
 "ui.shop.tab.consumables": "<gold><b>Effekte</b></gold>"
 "ui.shop.tab.special": "<gold><b>Spezial</b></gold>"
-"ui.shop.tab.upgrades": "<gold><b>Verbesserungen</b></gold>"
+"ui.shop.tab.upgrades": "<gold><b>Upgrades & Fallen</b></gold>"
 "ui.scrollable.previous": "<gray>Vorherige Seite</gray>"
 "ui.scrollable.next": "<gray>Nächste Seite</gray>"
 "ui.player_tracker.title": "<red>Spieler verfolgen</red>"

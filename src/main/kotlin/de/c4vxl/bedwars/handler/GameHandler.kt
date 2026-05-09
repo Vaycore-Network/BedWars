@@ -5,14 +5,9 @@ import de.c4vxl.gamemanager.gma.event.game.GameStartedEvent
 import de.c4vxl.gamemanager.gma.event.game.GameWorldLoadedEvent
 import de.c4vxl.gamemanager.gma.player.GMAPlayer.Companion.gma
 import de.c4vxl.gamemanager.language.Language.Companion.language
-import org.bukkit.Bukkit
-import org.bukkit.GameRules
-import org.bukkit.Material
-import org.bukkit.NamespacedKey
+import org.bukkit.*
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Player
-import org.bukkit.entity.Snowball
-import org.bukkit.entity.Snowman
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
@@ -23,7 +18,6 @@ import org.bukkit.event.inventory.CraftItemEvent
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.event.player.PlayerMoveEvent
-import org.bukkit.persistence.PersistentDataType
 import java.util.concurrent.TimeUnit
 
 /**
@@ -66,6 +60,9 @@ class GameHandler : Listener {
         world.setGameRule(GameRules.SPAWN_PHANTOMS, false)
         world.setGameRule(GameRules.LOCATOR_BAR, false)
         world.time = 6000
+        world.difficulty = Difficulty.NORMAL
+
+        event.game.gameData["upgradesDistance"] = event.map.getMetadata("bedwars")?.getInt("base-upgrades-distance", 30)
     }
 
     @EventHandler
@@ -87,6 +84,7 @@ class GameHandler : Listener {
         if (!player.gma.isInGame)
             return
 
+        player.foodLevel = 20
         event.isCancelled = true
     }
 
@@ -146,6 +144,8 @@ class GameHandler : Listener {
     @EventHandler
     fun onInteract(event: PlayerInteractEvent) {
         val game = event.player.gma.game ?: return
+
+        event.player.saturation = 10f
 
         if (event.action != Action.RIGHT_CLICK_BLOCK)
             return
